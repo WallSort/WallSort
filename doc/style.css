@@ -1,0 +1,180 @@
+/* Basic Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0px;
+    padding: 0;
+    background-color: black;
+    background-repeat: none;
+    background-blend-mode: color;
+    backface-visibility: 10%;
+    background-image: url(https://i.ibb.co/mrWHwxKs/kiske.jpg)
+}
+
+/* Header */
+header {
+    background: #333;
+    color: white;
+    padding: 20px;
+}
+
+/* Search Bar */
+#searchBar {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Horizontal Scroll Container */
+.gallery-container {
+    display: flex;
+    justify-content: center; /* Centers the gallery */
+    align-items: center;
+    width: 90%; /* Increase width to take up more space */
+    max-width: 600px; /* Adjust based on your preference */
+    margin: 0 auto; /* Centers it within the page */
+}
+
+
+/* Hide scrollbar */
+.gallery::-webkit-scrollbar {
+    display: none;
+}
+
+/* Wallpaper Container */
+.wallpaper {
+    flex: 0 0 auto;
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.wallpaper:hover {
+    transform: scale(1.05);
+}
+
+
+/* Fixed Heading */
+#heddings {
+    position: fixed;
+    top: 8px;
+    left: 31%;
+    font-size: 1rem;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 600px) {
+    body {
+        font-family: "Playfair Display", Arial, sans-serif;
+        text-align: center;
+        background-color: #646464;
+        margin: 4px;
+        padding: 4px;
+    }
+
+    header {
+        background: #333;
+        border-radius: 30px;
+        color: white;
+        padding: 10px;
+        font-size: 1.5rem;
+        font-family: "Playfair Display";
+    }
+
+    /* Mobile Search Bar */
+    #searchBar {
+        width: 80%;
+        max-width: 400px;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .wallpaper:hover {
+        transform: scale(1.05);
+    }
+
+    /* Image Styling */
+    .wallpaper img {
+        border-radius: 10px;
+        box-shadow: 10px 15px 20px rgba(255, 255, 255, 0.315);
+        cursor: pointer;
+    }
+
+    /* Centered Text Below Images */
+    #dis {
+        display: flex;
+        justify-content: center;
+        padding: 0.5px;
+        color: white;
+    }
+
+    /* Mobile Optimization */
+
+
+    @media (max-width: 480px) {
+        header {
+            font-size: 1.5rem;
+            padding: 10px;
+        }
+
+        #one {
+            position: relative;
+            left: -5px;
+            top: -5px;
+            font-family: "Playfair Display", serif;
+            color: white;
+            font-weight: 100px;
+        }
+        #two{
+            font-size: 1.5rem;
+            position: relative;
+            top: -55px;
+            left: 50px;
+            color: #ff4d4d;
+            font-family:"Cedarville Cursive" ;
+            font-weight: 100;
+        }
+
+        #searchBar {
+            width: 85%;
+            font-size: 14px;
+            border-radius: 30px;
+            opacity: 20%;
+            position: relative;
+            left:2px;
+        }
+        #searchBar:hover{
+            transition-duration: 0.2s;
+            transform: scale(1.1);
+            opacity: 50%;
+            transition-timing-function: ease-in;
+        }
+        .wallpaper {
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+            font-family: "Playfair Display",serif;
+        }
+        }
+        #topsen{
+            position: sticky;
+            top:600px;
+            width: 40px;
+        }
+        .wallpaper img {
+            height: 100px;
+            width: 600px;
+            object-fit: cover;
+            object-position: center;
+            gap: 10px;
+            border-radius: 30px;
+            box-shadow: 0px 5px 10px rgba(255, 255, 255, 0.315);
+            cursor: pointer;
+        }
+    
+        
+        
+    }
