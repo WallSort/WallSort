@@ -1,0 +1,48 @@
+/* Color Picker Button */
+.color-picker-container {
+    position: relative;
+    display: inline-block;
+}
+
+.color-circle {
+    width: 40px;
+    height: 40px;
+    background-color: grey;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 2px solid #ddd;
+}
+
+/* Dropdown List */
+.color-dropdown {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 44px; /* Slightly larger than the circle */
+    display: none;
+    background: white;
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Color Option Circles */
+.color-option {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin: 5px auto;
+    cursor: pointer;
+    border: 2px solid #ddd;
+    transition: 0.3s;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+/* Show dropdown when active */
+.show-dropdown {
+    display: block;
+}

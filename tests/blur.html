@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" src="blur.css">
+</head>
+<body>
+    <div class="color-picker-container">
+        <!-- Main color circle -->
+        <div id="colorPicker" class="color-circle"></div>
+    
+        <!-- Dropdown for color selection -->
+        <div id="colorDropdown" class="color-dropdown">
+            <div class="color-option" data-color="red" style="background-color: red;"></div>
+            <div class="color-option" data-color="blue" style="background-color: blue;"></div>
+            <div class="color-option" data-color="green" style="background-color: green;"></div>
+            <div class="color-option" data-color="yellow" style="background-color: yellow;"></div>
+            <div class="color-option" data-color="purple" style="background-color: purple;"></div>
+            <div class="color-option" data-color="gray" id="clearFilter">✖</div>
+        </div>
+    </div>
+</body>
+<script>
+    // Selecting elements
+const colorPicker = document.getElementById("colorPicker");
+const colorDropdown = document.getElementById("colorDropdown");
+const colorOptions = document.querySelectorAll(".color-option");
+const clearFilter = document.getElementById("clearFilter");
+
+// Toggle dropdown on click
+colorPicker.addEventListener("click", () => {
+    colorDropdown.classList.toggle("show-dropdown");
+});
+
+// Handle color selection
+colorOptions.forEach(option => {
+    option.addEventListener("click", () => {
+        let selectedColor = option.getAttribute("data-color");
+
+        if (selectedColor) {
+            colorPicker.style.backgroundColor = selectedColor; // Change main circle color
+            filterWallpapers(selectedColor);
+        } else {
+            resetWallpapers();
+        }
+        
+        colorDropdown.classList.remove("show-dropdown"); // Close dropdown
+    });
+});
+
+// Reset filter when grey circle (X) is clicked
+clearFilter.addEventListener("click", () => {
+    colorPicker.style.backgroundColor = "grey"; // Reset to default
+    resetWallpapers();
+    colorDropdown.classList.remove("show-dropdown");
+});
+
+// Function to filter wallpapers based on color
+function filterWallpapers(color) {
+    let wallpapers = document.querySelectorAll(".wallpaper"); // Assuming wallpapers have a class
+    wallpapers.forEach(wallpaper => {
+        if (wallpaper.getAttribute("data-color") === color) {
+            wallpaper.style.display = "block"; // Show matching wallpapers
+        } else {
+            wallpaper.style.display = "none"; // Hide others
+        }
+    });
+}
+
+// Function to reset wallpapers
+function resetWallpapers() {
+    let wallpapers = document.querySelectorAll(".wallpaper");
+    wallpapers.forEach(wallpaper => {
+        wallpaper.style.display = "block"; // Show all wallpapers
+    });
+}
+</script>
+</html>

@@ -1,0 +1,74 @@
+    
+        <div class="wallpaper" data-name="kaneki ken tokyo ghoul">
+            <a href="preview.html?image=dd.jpg&desc=An anime character with wonderful power
+             with good nature this is just a brief explanation.&title=Kaneki ken" loading="lazy">
+                <img  src="dd.jpg" alt="Mountain Sunset">
+            </a>
+            <div id="dis">Kaneki Ken</div>
+        </div> 
+        <div class="wallpaper" data-name="joker fire force card">
+            <a href="preview.html?image=done.jpg&desc=An anime character with 
+            wonderful power with good nature this is just a brief explanation.&title=Jocker" loading="lazy">
+                <img  src="done.jpg" alt="Mountain Sunset">
+            </a>
+            <div id="dis">Joker</div>
+        </div>
+        <div class="wallpaper" data-name="fire force rude">
+            <a href="preview.html?image=pixelcut-export-1.jpeg&desc=An anime character with wonderful power with good nature this is just a brief explanation.&title=Unknown" loading="lazy">
+                <img  src="pixelcut-export-1.jpeg" alt="Mountain Sunset">
+            </a>
+            <div id="dis">Unknown</div>
+        </div>
+        <div class="wallpaper" data-name="onepiece sanji black foot curly eyebrow">
+            <a href="preview.html?image=sanji.jpeg&desc=An anime character with wonderful power with good nature this is just a brief explanation.&title=Sanji" loading="lazy">
+                <img  src="sanji.jpeg" alt="Mountain Sunset">
+            </a>
+            <div id="dis">Black foot Sanji</div>
+        </div>
+        <div class="wallpaper" data-name="roronoa zoro onepice sworsman ">
+            <a href="preview.html?image=wp13814720-one-piece-zoro-iphone-wallpapers.jpg&desc=An anime character with wonderful power with good nature this is just a brief explanation.&title=Roronoa Zoro" loading="lazy">
+                <img  src="wp13814720-one-piece-zoro-iphone-wallpapers.jpg" alt="Mountain Sunset">
+            </a>
+            <div id="dis">Roronoa Zoro</div>
+        </div>
+        <div class="wallpaper" data-name="urahara Kiske bleech ">
+            <a href="preview.html?image=kiske.jpg&desc=An anime character with wonderful power with good nature this is just a brief explanation.&title=Urahara Kiske" loading="lazy">
+                <img  src="kiske.jpg" alt="Mountain Sunset">
+            </a>
+            <div id="dis">Urahara Kiske</div>
+                              <!---22222222-->
+        <div class="wallpaper" data-name="artur boyl fire force excalibur plasma">
+            <a href="preview.html?image=2.jpg&desc=An anime character with wonderful power with good nature this is just a brief explanation.&title=Aurther Boyl" loading="lazy">
+                <img class="imaging1" src="2.jpg" alt="Mountain Sunset">
+            </a>
+            <div id="dis">Artur Boyl</div>
+         <!-- 🖼️ Single image (You can add more later) -->
+                            <!---22222222-->
+        <div class="wallpaper" data-name="urahara bleach benihime kiske">
+            <a href="preview.html?image=urh.jpg&desc=An anime character with wonderful power with good nature this is just a brief explanation.&title=Urahara Kiske" loading="lazy">
+                <img  src="urh.jpg" alt="Mountain Sunset">
+            </a>
+            <div id="dis">Urahara</div>
+        </div>
+
+
+
+
+
+        // image loading animation
+document.addEventListener("DOMContentLoaded", function () {
+    let images = document.querySelectorAll("img");
+    let totalImages = images.length;
+    let loadedImages = 0;
+
+    document.getElementById("loader").style.display = "flex"; // Show loader
+
+    images.forEach(img => {
+        img.onload = function () {
+            loadedImages++;
+            if (loadedImages === totalImages) {
+                document.getElementById("loader").style.display = "none"; // Hide loader when all images are loaded
+            }
+        };
+    });
+});

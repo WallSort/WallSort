@@ -1,0 +1,66 @@
+[
+    {
+        "src": "images/ishida.jpg",
+        "name": "Ishida Uryu",
+        "description": "A Quincy from Bleach.",
+        "keywords": ["Ishida Uryu", "anime", "Quincy", "Bleach"],
+        "likes": 0,
+        "color": "red"
+    },
+    {
+        "src": "images/unknown_one.jpeg",
+        "name": "Unknown",
+        "description": "A Fire Force character.",
+        "keywords": ["unknown", "anime", "Fire Force", "brute"],
+        "likes": 0,
+        "color": "red"
+    },
+    {
+        "src": "images/sanji.jpeg",
+        "name": "Black Foot Sanji",
+        "description": "One Piece character with curly eyebrows.",
+        "keywords": ["Sanji", "anime", "One Piece", "cook", "straw hat"],
+        "likes": 0,
+        "color": "red"
+    },
+    {
+        "src": "images/urahara_two.jpg",
+        "name": "Urahara Kisuke",
+        "description": "A mysterious shop owner from Bleach.",
+        "keywords": ["Urahara", "Bleach", "Kisuke", "anime"],
+        "likes": 0,
+        "color": "white"
+    },
+    {
+        "src": "images/urahara_one.jpg",
+        "name": "Urahara Kisuke",
+        "description": "A former captain from Bleach.",
+        "keywords": ["Urahara Kisuke", "anime", "Bleach", "shopkeeper"],
+        "likes": 0,
+        "color": "blue"
+    },
+    {
+        "src": "images/kaneki.jpg",
+        "name": "Kaneki Ken",
+        "description": "A character from Tokyo Ghoul.",
+        "keywords": ["Kaneki", "anime", "Tokyo Ghoul", "ghoul"],
+        "likes": 0,
+        "color": "white"
+    },
+    {
+        "src": "images/garo.jpg",
+        "name": "Garou the Villain",
+        "description": "A character from One Punch Man.",
+        "keywords": ["Garou", "anime", "One Punch Man", "villain"],
+        "likes": 0,
+        "color": "white"
+    },
+    {
+        "src": "images/zoro.jpg",
+        "name": "Roronoa Zoro",
+        "description": "A swordsman from One Piece.",
+        "keywords": ["Zoro", "One Piece", "anime", "Three Sword Style"],
+        "likes": 0,
+        "color": "white"
+    }
+]

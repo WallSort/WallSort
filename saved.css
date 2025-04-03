@@ -1,0 +1,164 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    margin-top: 10px;
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    font-family: "Playfair Display";
+    font-size: 2.3rem;
+    color: #333;
+    animation-name:hediing;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+
+}
+@keyframes hediing {
+    0%{}
+    25%{
+        color:rgb(160, 160, 160);
+    }
+    50%{
+        color:white;
+    }
+    75%{
+        color:rgb(117, 117, 117);
+    }
+    100%{}
+}
+
+#savedGallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 180px;
+    padding-left: 20px;
+}
+
+.image-container {
+    gap: 30px;
+    position: relative;
+    margin: 30px;
+    padding:40px;
+    display: inline-block;
+}
+
+.saved-img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.select-checkbox {
+    opacity: 30%;
+    position: absolute;
+    top: 15px;
+    left: 24px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+#deleteSelectedBtn{
+    font-family: "Playfair Display";
+    position: fixed;
+    top: 120px;
+    left: 50px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background: #c4c4c4;
+    color: rgb(82, 82, 82);
+    border-radius: 10px;
+    cursor: pointer;
+    z-index:10;
+}
+#deleteSelectBtn:hover{
+    background: #c4c4c4;
+    color: rgb(82, 82, 82);
+    transform: scale(0.90);
+    transition-duration: 2s;
+}
+#clearBtn{
+    font-family: "Playfair Display";
+    position: fixed;
+    top: 120px;
+    left: 230px;
+    z-index:10;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background: #c4c4c4;
+    color: rgb(82, 82, 82);
+    border-radius: 10px;
+    cursor: pointer;
+}
+#clearBtn:hover{
+    background: #c4c4c4;
+    color: rgb(82, 82, 82);
+    transform: scale(0.90);
+    transition-duration: 2s;
+}
+#bg {
+    filter:blur(100px);        
+    opacity: 70%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* Ensures the video fills the screen without stretching */
+    z-index: -1; /* Places video behind other content */
+    animation-name:rotated_back;
+    animation-duration: 80s;
+    animation-iteration-count: infinite;
+}
+@keyframes rotated_back {
+    0%{}
+    50%{
+        transform:rotate(360deg);
+    }
+    100%{
+        transform:rotate(0deg);
+    }
+}
+#one {
+    position:fixed;
+    left: 10px;
+    top: 10px;
+    padding: 5px 10px;
+    font-size: 0.7rem;
+    background: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    z-index: 10;
+}
+#navx{
+    background: solid;
+    background-color: #41414157;
+    padding: 50px 190px;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    top:100px; 
+    left: 10px;
+    border-radius:20px;
+    backdrop-filter: blur(10px);
+    font-weight: -10;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+    opacity:98%;
+    z-index:9;
+ }
+
+

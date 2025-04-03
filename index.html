@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WallSort</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!--Fonts sed from google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body bgcolor="balck">
+    
+    <!--Loding creator-->
+    <div class="loader-spinner"></div>
+
+
+    <!--Creates a bg from img blurs it rotate it-->    
+    <img id="bg" src="mob-psycho-100-arataka-reigen-3.jpg" href="kiske.jpg">
+
+    <!--make a top div for top hrf butten-->
+    <div id="top"></div>
+
+    <!--Shows tags that selected serches in serchbar-->
+    <div>
+        <button class="tags one" onclick="searchByCategory('anime')">Anime</button>
+        <button class="tags two" onclick="searchByCategory('marvel')">Marvel</button>
+        <button class="tags three" onclick="searchByCategory('nature')">Nature</button>
+        <button class="tags four" onclick="searchByCategory('geometry')">Geometry</button>
+    </div>
+
+    <!--Hedding and top area contaning heds and sub hed and serch bar-->
+    <header>
+        <h1 id="one">WallSort</h1>
+        <h3 id="two" class="ns">by ray industry</h3>
+        <input type="text" id="searchBar" class="searchBar" placeholder="Search wallpapers..." 
+        onkeyup="searchWallpapers()">
+
+
+        <!--Trial drop down color selector-->
+        <div class="color-picker-container">
+            <!-- Main color circle -->
+            <div id="colorPicker" class="color-circle"></div>
+        
+            <!-- Dropdown for color selection -->
+        <div id="colorDropdown" class="color-dropdown">
+            <div onclick="searhColo()" class="color-option" data-color="red" style="background-color: rgb(163, 0, 0);"></div>
+            <div onclick="searhColo()"  class="color-option" data-color="blue" style="background-color: rgb(0, 0, 179);"></div>
+            <div onclick="searhColo()"  class="color-option" data-color="green" style="background-color: rgb(0, 80, 0);"></div>
+            <div onclick="searhColo()"  class="color-option" data-color="yellow" style="background-color: rgb(177, 177, 0);"></div>
+            <div onclick="searhColo()"  class="color-option" data-color="purple" style="background-color: purple;"></div>
+            <div  onclick="searhColo()" class="color-option" data-color="gray" id="clearFilter">x</div>
+        </div>
+    </div>
+    </header>
+
+    <!-- Butten for reching top and butten for recing to saved.html-->
+        <div id="navx">.</div>
+        <button class="srcs" id="serchBtn"><img id="serchBtnI" src="serchs.svg"></button>
+        <a href="saved.html"><img id="saves" src="saveGoogle.png"></a>
+
+    
+
+    <!--A logo of ws appears next to top hedding-->
+    <div class="ids">
+        <img id="logoclr" href="clr.png" src="clr.png"> 
+        <img id="logo" href="roundLogo.png" src="roundLogo.png">
+    </div>
+
+
+        <!--an intro that creaes a good effect and gose back after showng-->
+    <div class="idds">
+        <div id="indi">q</div>
+        <img id="intro" href="clr.png" src="clr.png"> 
+        <img id="introo" href="roundLogo.png" src="roundLogo.png">  
+    </div>
+
+
+
+
+    <!--Image gallery that shows images using json file-->
+    <main class="scroll-container" id="gallery">
+            <div class="gallery" id="gallery">
+                <div id="jsonGallery">
+                </div>
+            </div>
+
+
+
+
+        <!--loader for image scureently not in use-->
+        <div id="loader"></div>
+        <div class="loader-spinner"></div>
+        
+
+        <!-- Shows sorry coz high demention not supported-->
+        <div id="devoloping">
+            <img id="bigl" src="onload.gif">
+            <h1 class="output onee">Sorry !</h1>
+            <h2 class="output twoo">The site is still in progress for <spam id="redl">this Device</spam></h2>
+            <h3 class="output threee">Kindly Wait ....</h3>
+            <h2 class="output fourr">Error , You may use Portrait mode if possble</h2>
+            <h2 class="outpu fivee">Copyright, All Right reseved</class>
+        </div>
+
+        <!--Trial pop u-->
+        <div class="popup-overlay"></div>
+    <div class="popup-menu" id="popupMenu">
+        <button id="saveBtn"><img id="btnS" src="saveGoogle.png">  Save</button>
+        <button id="shareBtn"><img id="btnd" src="shereGoogle.png">  Share</button>
+    </div>
+
+
+    </main>
+
+    <div>
+        <div id="copy">
+            <h3 class="text sone">Ray Industryes</h3>
+            <h3 class="text stwo">Copy Right. All Rights Receved 2025</h3>
+            <h4 class="text sthree"><a href="#" class="sthree">Conatct</a> | <a href="instagram.com" class="sthree">Instagram</a> | <a href="#" class="sthree">Polisy</a></h4>
+        </div> 
+    </div>
+
+<script src="index.js"></script>
+    
+    
+</body>
+</html>
