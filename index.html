@@ -39,9 +39,8 @@
         <h3 id="two" class="ns">by ray industry</h3>
         <input type="text" id="searchBar" class="searchBar" placeholder="Search wallpapers..." 
         onkeyup="searchWallpapers()">
-
-
-        <!--Trial drop down color selector-->
+    </header>
+ <!--Trial drop down color selector-->
         <div class="color-picker-container">
             <!-- Main color circle -->
             <div id="colorPicker" class="color-circle"></div>
@@ -56,7 +55,6 @@
             <div  onclick="searhColo()" class="color-option" data-color="gray" id="clearFilter">x</div>
         </div>
     </div>
-    </header>
 
     <!-- Butten for reching top and butten for recing to saved.html-->
         <div id="navx">.</div>
@@ -110,7 +108,7 @@
         <!--Trial pop u-->
         <div class="popup-overlay"></div>
     <div class="popup-menu" id="popupMenu">
-        <button id="saveBtn"><img id="btnS" src="saveGoogle.png">  Save</button>
+        <button id="saveBtn"><img id="btnS" src="saveGoogle.png" onclick="saveImage()">Save</button>
         <button id="shareBtn"><img id="btnd" src="shereGoogle.png">  Share</button>
     </div>
 
@@ -125,7 +123,7 @@
         </div> 
     </div>
 
-<script src="script.js"></script>
+<script src="index.js"></script>
     
     
 </body>
