@@ -1,46 +1,58 @@
-function loadSavedImages() {
+document.addEventListener("DOMContentLoaded", function () {
+    const gallery = document.getElementById("savedGallery");
     let userSession = localStorage.getItem("userSession");
-
     if (!userSession) {
-        document.getElementById("savedGallery").innerHTML = "<p>No saved images.</p>";
+        gallery.innerHTML = "<p>No saved images.</p>";
         return;
     }
 
     let savedImages = JSON.parse(localStorage.getItem(userSession)) || [];
-    let gallery = document.getElementById("savedGallery");
+
+    if (savedImages.length === 0) {
+        gallery.innerHTML = "<p>No saved wallpapers yet.</p>";
+        return;
+    }
 
     gallery.innerHTML = ""; // Clear before loading
 
-    savedImages.forEach(url => {
-        let imgContainer = document.createElement("div");
-        imgContainer.className = "image-container";
+    savedImages.forEach(imageUrl => {
+        const imgContainer = document.createElement("div");
+        imgContainer.classList.add("image-container");
 
-        let img = document.createElement("img");
-        img.src = url;
-        img.className = "saved-img";
+        const img = document.createElement("img");
+        img.src = imageUrl;
+        img.classList.add("saved-img");
 
-        let checkbox = document.createElement("input");
+        // ✅ Redirect to preview.html with encoded data
+        img.addEventListener("click", function () {
+            const encodedSrc = encodeURIComponent(imageUrl);
+            const title = encodeURIComponent("Saved Image");
+            const desc = encodeURIComponent("This is your saved wallpaper.");
+            window.location.href = `preview.html?image=${encodedSrc}&title=${title}&desc=${desc}`;
+        });
+
+        const checkbox = document.createElement("input");
         checkbox.type = "checkbox";
-        checkbox.className = "select-checkbox";
-        checkbox.value = url;
+        checkbox.classList.add("select-checkbox");
+        checkbox.value = imageUrl;
 
         imgContainer.appendChild(checkbox);
         imgContainer.appendChild(img);
         gallery.appendChild(imgContainer);
     });
-}
+});
 
 function deleteSelectedImages() {
     let userSession = localStorage.getItem("userSession");
     let savedImages = JSON.parse(localStorage.getItem(userSession)) || [];
 
-    let selectedCheckboxes = document.querySelectorAll(".select-checkbox:checked");
-    selectedCheckboxes.forEach(checkbox => {
+    const selected = document.querySelectorAll(".select-checkbox:checked");
+    selected.forEach(checkbox => {
         savedImages = savedImages.filter(img => img !== checkbox.value);
     });
 
     localStorage.setItem(userSession, JSON.stringify(savedImages));
-    loadSavedImages(); // Reload the gallery
+    location.reload();
 }
 
 function clearSavedImages() {
@@ -51,6 +63,3 @@ function clearSavedImages() {
         location.reload();
     }
 }
-
-// Load saved images when the page loads
-window.onload = loadSavedImages;
