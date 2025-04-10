@@ -246,28 +246,43 @@ fetch("data.json")
         overlay.style.display = "none";
     });
 
-    document.addEventListener("click", function (event) {
-        if (event.target.classList.contains("save-btn")) {
-            let imgSrc = event.target.closest(".image-container").querySelector("img").src;
-            let savedImages = JSON.parse(localStorage.getItem("savedImages")) || [];
-            savedImages.push(imgSrc);
-            localStorage.setItem("savedImages", JSON.stringify(savedImages));
-            alert("Image saved!");
+   // Save Button Click Handler
+document.getElementById("jsonGallery").addEventListener("click", function (event) {
+    if (event.target.classList.contains("save-btn")) {
+        event.stopPropagation(); // Prevent interference
+
+        let saveBtn = event.target;
+        let imageSrc = saveBtn.getAttribute("data-src");
+
+        // Get existing saved images
+        let savedImages = JSON.parse(localStorage.getItem("savedImages")) || [];
+
+        // Toggle Save/Unsave
+        if (savedImages.includes(imageSrc)) {
+            savedImages = savedImages.filter(img => img !== imageSrc);
+            saveBtn.textContent = "💾 Save";
+        } else {
+            savedImages.push(imageSrc);
+            saveBtn.textContent = "✅ Saved";
         }
-    
-        if (event.target.classList.contains("share-btn")) {
-            let imgSrc = event.target.closest(".image-container").querySelector("img").src;
-            if (navigator.share) {
-                navigator.share({
-                    title: "Check out this wallpaper!",
-                    url: imgSrc
-                }).catch(err => console.error("Error sharing:", err));
-            } else {
-                prompt("Copy this link to share:", imgSrc);
-            }
+
+        localStorage.setItem("savedImages", JSON.stringify(savedImages));
+    }
+});
+
+// Call this function when the page loads
+function updateSavedImages() {
+    let savedImages = JSON.parse(localStorage.getItem("savedImages")) || [];
+    document.querySelectorAll(".save-btn").forEach(btn => {
+        let imageSrc = btn.getAttribute("data-src");
+        if (savedImages.includes(imageSrc)) {
+            btn.textContent = "✅ Saved";
         }
     });
-});    
+}
+
+window.addEventListener("DOMContentLoaded", updateSavedImages);
+
 // Color dropdown menu
 // Selecting elements
 const colorPicker = document.getElementById("colorPicker");
@@ -371,6 +386,8 @@ document.querySelector(".srcs").addEventListener("click", function () {
 });
 
 
+    });
 
+    
 
     
