@@ -78,71 +78,71 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(error => console.error("Error loading images:", error));
 
-    // ✅ Like Button Event Delegation (Fixed)
-    document.getElementById("jsonGallery").addEventListener("click", function (event) {
-        if (event.target.classList.contains("like-btn")) {
-            event.stopPropagation(); // ✅ Prevent swipe triggering
-            let likeBtn = event.target;
-            let likeCount = likeBtn.querySelector("span");
-            let imageSrc = likeBtn.getAttribute("data-src");
-            let isLiked = likeBtn.getAttribute("data-liked") === "true";
+        function toggleLike() {
+            const imageUrl = decodeURIComponent(new URLSearchParams(window.location.search).get("image"));
             let likes = JSON.parse(localStorage.getItem("likes")) || {};
-
+            let likedImages = JSON.parse(localStorage.getItem("liked")) || [];
+        
+            const isLiked = likedImages.includes(imageUrl);
+        
             if (isLiked) {
-                likes[imageSrc] = Math.max((likes[imageSrc] || 1) - 1, 0);
-                likeBtn.setAttribute("data-liked", "false");
+                likes[imageUrl] = Math.max((likes[imageUrl] || 1) - 1, 0);
+                likedImages = likedImages.filter(img => img !== imageUrl);
+                document.querySelector(".like-btn").innerHTML = `❤️ <span id="like-count">${likes[imageUrl]}</span>`;
             } else {
-                likes[imageSrc] = (likes[imageSrc] || 0) + 1;
-                likeBtn.setAttribute("data-liked", "true");
+                likes[imageUrl] = (likes[imageUrl] || 0) + 1;
+                likedImages.push(imageUrl);
+                document.querySelector(".like-btn").innerHTML = `💖 <span id="like-count">${likes[imageUrl]}</span>`;
             }
-
-            likeCount.textContent = likes[imageSrc];
+        
             localStorage.setItem("likes", JSON.stringify(likes));
+            localStorage.setItem("liked", JSON.stringify(likedImages));
         }
-    });
-
-    // ✅ Save Button Event Delegation (Fixed)
-    document.getElementById("jsonGallery").addEventListener("click", function (event) {
-        if (event.target.classList.contains("save-btn")) {
-            event.stopPropagation(); // ✅ Prevent accidental swipe
-            let saveBtn = event.target;
-            let imageSrc = saveBtn.getAttribute("data-src");
-
-            let savedImages = JSON.parse(localStorage.getItem("savedImages")) || [];
-
-            if (savedImages.includes(imageSrc)) {
-                savedImages = savedImages.filter(img => img !== imageSrc);
-                saveBtn.textContent = "💾 Save";
-            } else {
-                savedImages.push(imageSrc);
-                saveBtn.textContent = "✅ Saved";
-            }
-
-            localStorage.setItem("savedImages", JSON.stringify(savedImages));
-        }
-    });
-
-    // ✅ Update Save Buttons (After Refresh)
-    function updateSavedImages() {
-        let savedImages = JSON.parse(localStorage.getItem("savedImages")) || [];
-        document.querySelectorAll(".save-btn").forEach(btn => {
-            let imageSrc = btn.getAttribute("data-src");
-            if (savedImages.includes(imageSrc)) {
-                btn.textContent = "✅ Saved";
+        
+        // ✅ Load Like Count on Page Load
+        document.addEventListener("DOMContentLoaded", function () {
+            const imageUrl = decodeURIComponent(new URLSearchParams(window.location.search).get("image"));
+            const likes = JSON.parse(localStorage.getItem("likes")) || {};
+            const likedImages = JSON.parse(localStorage.getItem("liked")) || [];
+        
+            const count = likes[imageUrl] || 0;
+            const isLiked = likedImages.includes(imageUrl);
+        
+            const likeBtn = document.querySelector(".like-btn");
+            if (likeBtn) {
+                likeBtn.innerHTML = `${isLiked ? "💖" : "❤️"} <span id="like-count">${count}</span>`;
             }
         });
+        
+    });
+    //shere
+    function shareContent() {
+        if (navigator.share) {
+            navigator.share({
+                title: "Check this out!",
+                text: "I found this amazing wallpaper!",
+                url: window.location.href
+            })
+            .then(() => console.log("Shared successfully!"))
+            .catch((error) => console.log("Error sharing:", error));
+        } else {
+            alert("Sharing is not supported on this browser.");
+        }
+    }
+  function saveImage() {
+    let imageUrl = document.getElementById("preview-image").src;
+
+    // Create a unique session key for each user (if not created)
+    if (!localStorage.getItem("userSession")) {
+      localStorage.setItem("userSession", "user_" + Date.now()); // Unique ID
     }
 
-    // ✅ Update Like Button UI from LocalStorage
-    function updateLikeButtons() {
-        let likes = JSON.parse(localStorage.getItem("likes")) || {};
-        document.querySelectorAll(".like-btn").forEach(btn => {
-            let imageSrc = btn.getAttribute("data-src");
-            let likeCount = btn.querySelector("span");
-            if (likes[imageSrc]) {
-                likeCount.textContent = likes[imageSrc];
-                btn.setAttribute("data-liked", "true");
-            }
-        });
-    }
-});
+    let userSession = localStorage.getItem("userSession"); // Get user session ID
+    let savedImages = JSON.parse(localStorage.getItem(userSession)) || [];
+
+    // Add new image
+    savedImages.push(imageUrl);
+    localStorage.setItem(userSession, JSON.stringify(savedImages));
+
+    alert("Image saved to your collection!");
+  }
