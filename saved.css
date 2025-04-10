@@ -14,43 +14,40 @@ h2 {
     font-family: "Playfair Display";
     font-size: 2.3rem;
     color: #333;
-    animation-name:hediing;
+    animation-name: hediing;
     animation-duration: 15s;
     animation-iteration-count: infinite;
-
 }
+
 @keyframes hediing {
-    0%{}
-    25%{
-        color:rgb(160, 160, 160);
-    }
-    50%{
-        color:white;
-    }
-    75%{
-        color:rgb(117, 117, 117);
-    }
-    100%{}
+    0% {}
+    25% { color: rgb(160, 160, 160); }
+    50% { color: white; }
+    75% { color: rgb(117, 117, 117); }
+    100% {}
 }
 
+/* ✅ Pinterest-style 2-column grid */
 #savedGallery {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 180px 16px 16px 16px;
     justify-content: center;
-    padding: 180px;
-    padding-left: 20px;
 }
 
 .image-container {
-    gap: 30px;
     position: relative;
-    margin: 30px;
-    padding:40px;
-    display: inline-block;
+    top: 50px;
+    left: -10px;
+    break-inside: avoid;
+    width: 100%;
+    padding: 8px;
+    z-index: 10;
 }
 
 .saved-img {
-    width: 200px;
+    width: 100%;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -67,7 +64,7 @@ h2 {
     cursor: pointer;
 }
 
-#deleteSelectedBtn{
+#deleteSelectedBtn {
     font-family: "Playfair Display";
     position: fixed;
     top: 120px;
@@ -79,20 +76,22 @@ h2 {
     color: rgb(82, 82, 82);
     border-radius: 10px;
     cursor: pointer;
-    z-index:10;
+    z-index: 10;
 }
-#deleteSelectBtn:hover{
+
+#deleteSelectBtn:hover {
     background: #c4c4c4;
     color: rgb(82, 82, 82);
     transform: scale(0.90);
     transition-duration: 2s;
 }
-#clearBtn{
+
+#clearBtn {
     font-family: "Playfair Display";
     position: fixed;
     top: 120px;
     left: 230px;
-    z-index:10;
+    z-index: 10;
     padding: 10px 20px;
     font-size: 16px;
     border: none;
@@ -101,37 +100,37 @@ h2 {
     border-radius: 10px;
     cursor: pointer;
 }
-#clearBtn:hover{
+
+#clearBtn:hover {
     background: #c4c4c4;
     color: rgb(82, 82, 82);
     transform: scale(0.90);
     transition-duration: 2s;
 }
+
 #bg {
-    filter:blur(100px);        
+    filter: blur(100px);
     opacity: 70%;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    object-fit: cover; /* Ensures the video fills the screen without stretching */
-    z-index: -1; /* Places video behind other content */
-    animation-name:rotated_back;
+    object-fit: cover;
+    z-index: -1;
+    animation-name: rotated_back;
     animation-duration: 80s;
     animation-iteration-count: infinite;
 }
+
 @keyframes rotated_back {
-    0%{}
-    50%{
-        transform:rotate(360deg);
-    }
-    100%{
-        transform:rotate(0deg);
-    }
+    0% {}
+    50% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
 }
+
 #one {
-    position:fixed;
+    position: fixed;
     left: 10px;
     top: 10px;
     padding: 5px 10px;
@@ -142,23 +141,20 @@ h2 {
     border-radius: 5px;
     z-index: 10;
 }
-#navx{
+
+#navx {
     background: solid;
     background-color: #41414157;
     padding: 50px 190px;
     position: fixed;
     align-items: center;
     justify-content: center;
-    top:100px; 
+    top: 100px;
     left: 10px;
-    border-radius:20px;
+    border-radius: 20px;
     backdrop-filter: blur(10px);
     font-weight: -10;
     text-align: left;
-    align-items: center;
-    justify-content: center;
-    opacity:98%;
-    z-index:9;
- }
-
-
+    opacity: 98%;
+    z-index: 9;
+}
