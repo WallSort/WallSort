@@ -9,8 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
 </head>
 <body background="grey">
+    
     <div id="top"> </div>
     <img id="bg" src="#" alt="animation">
     <header>
@@ -18,8 +20,9 @@
     </header>
     <h1 class="mainttxt">WallSort</h1>
     <main class="preview-container">
-        <img id="preview-image" src="#" alt="Wallpaper Preview">
-        <button id="like-btn" class="like-btn" onclick="like()"><image id="love" src="love.png"><span id="like-count">0</span></button>
+        <img id="preview-image" src="#" alt="Wallpaper Preview" loading="lazy">
+
+
         <div id="navx">.</div>
         <div id="lines">
         <h2 id="imageTitle"></h2>
@@ -27,8 +30,8 @@
         </div>
         
         <a id="download-btn" href="#" download class="download-btn"><img id="sss" src="download.png">  Download</a>
-        <button class="download-btn-two" onclick="shareContent()"><img id="ss" src="shereGoogle.png">  Shere</button>
-        <button class="download-btn-two-three" onclick="saveImage()">.<img id="saves" src="saveGoogle.png"></button>
+        <button class="download-btn-two" onclick="shareContent()"><img id="ss" src="shereGoogle.png">  Share</button>
+        <button class="download-btn-two-three" onclick="saveImage()"><img id="saves" src="saveGoogle.png"></button>
         
 
 
@@ -39,11 +42,15 @@
         </div>
 
 
-
         <!--loader for image scureently not in use-->
         <div id="loader"></div>
         <div class="loader-spinner"></div>
     </main>
+    
+    <div id="swipeGuide" class="swipe-guide">
+        👉 Swipe left and right to navigate wallpapers 👈
+    </div>
+    
 
 <script src="preview.js"></script>
     
