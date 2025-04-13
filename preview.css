@@ -42,6 +42,7 @@ body {
 
 /* Download Button */
 .download-btn {
+    text-align: center;
     margin-top: -20px;
     display: inline-block;
     padding: 10px 20px;
@@ -54,11 +55,6 @@ body {
     position: relative;
     top:0px;
 
-}
-.download-btn:hover {
-    background: #3a3a3a;
-    transform: scale(0.80);
-    transition-duration: 2s;
 }
 #kis{
     display: block;
@@ -149,11 +145,11 @@ body {
         margin-top: 160px;
         display: inline-block;
         padding: 9px 125px;
-        background: #a0a0a0;
-        color: rgb(63, 63, 63);
+        background: #4882ff;
+        color: rgb(255, 255, 255);
         text-decoration: none;
         font-weight: bold;
-        border-radius: 10px;
+        border-radius: 30px;
         box-shadow: 0px 10px 10px rgba(143, 143, 143, 0.2);
         position: relative;
         top: -15px;  
@@ -161,10 +157,20 @@ body {
     
     }
     .download-btn:hover {
-        background: #c4c4c4;
-        color: rgb(82, 82, 82);
-        transform: scale(0.90);
-        transition-duration: 2s;
+     animation-name:click ;
+     animation-duration: 1.5s;
+     animation-iteration-count: 1;
+    }
+    @keyframes click {
+        0%{
+            transform: scale(1);
+        }
+        50%{
+            transform: scale(0.9);
+        }
+        100%{
+            transform: scale(1);
+        }
     }
     .download-btn-two{
         font-weight: bold;
@@ -172,10 +178,10 @@ body {
         margin-top: 10px;
         display: inline-block;
         padding: 8px 138px;
-        background: #a0a0a0;
-        color: rgb(63, 63, 63);
+        background: #4882ff;
+        color: rgb(255, 255, 255);
         text-decoration: none;
-        border-radius: 10px;
+        border-radius: 30px;
         box-shadow: 0px 10px 10px rgba(143, 143, 143, 0.2);
         position: relative;
         left: 0px;
@@ -184,10 +190,9 @@ body {
     
     }
     .download-btn-two:hover {
-        background: #c4c4c4;
-        color: rgb(82, 82, 82);
-        transform: scale(0.90);
-        transition-duration: 2s;
+        animation-name:click ;
+        animation-duration: 1.5s;
+        animation-iteration-count: 1;
     }
 
     .download-btn-two-three{
@@ -195,11 +200,11 @@ body {
         display: inline-block;
         padding: 0px 157px;
         height: 37.5px;
-        background: #a0a0a0;
-        color: rgb(63, 63, 63);
+        background: #4882ff;
+        color: rgb(255, 255, 255);
         text-decoration: none;
         font-weight: bold;
-        border-radius: 11px;
+        border-radius: 30px;
         box-shadow: 0px 10px 10px rgba(143, 143, 143, 0.2);
         position: relative;
         left: 0px;
@@ -207,10 +212,9 @@ body {
         border: none;
     }
     .download-btn-two-three:hover {
-        background: #c4c4c4;
-        color: rgb(82, 82, 82);
-        transform: scale(0.90);
-        transition-duration: 2s;
+        animation-name:click ;
+        animation-duration: 1.5s;
+        animation-iteration-count: 1;
     }
     .contact{
         text-decoration: none;
@@ -305,7 +309,7 @@ body {
     filter: invert(75%);
 }
 #saves{
-    filter: invert(75%);
+    filter: invert(0%);
     width: 30px;
     padding-top:0px ;
     align-items: center;
@@ -414,7 +418,7 @@ body {
 .dull{
     filter: invert(80%);
     box-shadow: none;
-    background: none;
+    background: transparent;
     border: none;
     padding: 10px 10px;
     position:relative;
@@ -426,16 +430,35 @@ body {
     color:#afafaf; 
 }
 #ss{
-    filter: invert(80%);
+    filter: invert(0%);
     background: transparent;
     border-radius:10px;
-    box-shadow:0px 10px 30px black;
     width: 20px;
 }
 #sss{
-    filter: invert(80%);
+    filter: invert(0%);
     background: transparent;
     border-radius:10px;
-    box-shadow:0px 10px 30px black;
     width: 22px;
 }
+.swipe-guide {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(51, 51, 51, 0.9);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-family: "Playfair Display";
+    font-size: 14px;
+    z-index: 9999;
+    opacity: 0;
+    transition: bottom 0.5s ease, opacity 0.5s ease;
+}
+
+.swipe-guide.show {
+    bottom: 40px;
+    opacity: 1;
+}
+
