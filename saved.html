@@ -19,11 +19,33 @@
     <h2>Your, Saved Images</h2>
     <div id="savedGallery"></div>
 
-    <div id="navx">.</div>
+
     <button id="deleteSelectedBtn" onclick="deleteSelectedImages()">Delete Selected</button>
-    <button id="clearBtn" onclick="clearSavedImages()">Clear All</button>
+    <button id="clearBtn" onclick="showConfirmBox()">Clear All</button>
+
+    <div id="boxsa">
+        <div id="boxs">
+        <h4 class="msg info">
+            Conform to Clear all
+        </h4>
+        <div>
+            <button class="btn clr" onclick="clearSavedImages()">
+                    clear all
+            </button>
+            <button class="btn cans" onclick="hide()">
+                    cancel
+            </button>
+        </div>
+        </div>
+    </div>
+
+    <h3 id="savedCount" class="numb">
+<span id="count" class="topu">0 </span>  .Saved Wallpaper's  
+    </h3>
+    
 
     <script src="saved.js"></script>
+
 
 </body>
 </html>
