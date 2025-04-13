@@ -57,9 +57,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 wallpaperDiv.setAttribute("data-desc", item.description ? item.description.toLowerCase() : "");
                 wallpaperDiv.setAttribute("data-keywords", item.keywords ? item.keywords.join(" ").toLowerCase() : "");
 
-                wallpaperDiv.innerHTML = `
-                    <img src="${item.src}" alt="${item.name}">
-                `;
+                // ✅ With this block for lazy loading:
+                let img = document.createElement("img");
+                img.src = item.src;
+                img.alt = item.name;
+                img.loading = "lazy"; // ✅ Enable lazy loading
+
+                wallpaperDiv.appendChild(img);
+                document.getElementById("jsonGallery").appendChild(wallpaperDiv);
 
                 // ✅ Redirect to preview page when clicked
                 wallpaperDiv.addEventListener("click", function () {
@@ -203,12 +208,14 @@ fetch("data.json")
             data.forEach(item => {
                 let wallpaperDiv = document.createElement("div");
                 wallpaperDiv.classList.add("wallpaper");
+        // ✅ With this block for lazy loading:
+        let img = document.createElement("img");
+        img.src = item.src;
+        img.alt = item.name;
+        img.loading = "lazy"; // ✅ Enable lazy loading
 
-                wallpaperDiv.innerHTML = `
-                    <img src="${item.src}" alt="${item.name}">
-                `;
-
-                jsonGallery.appendChild(wallpaperDiv);
+        wallpaperDiv.appendChild(img);
+        document.getElementById("jsonGallery").appendChild(wallpaperDiv);
             });
 
             // Attach event listeners after images load
@@ -253,6 +260,7 @@ document.getElementById("jsonGallery").addEventListener("click", function (event
 
         let saveBtn = event.target;
         let imageSrc = saveBtn.getAttribute("data-src");
+        imageSrc.loading = "lazy";
 
         // Get existing saved images
         let savedImages = JSON.parse(localStorage.getItem("savedImages")) || [];
