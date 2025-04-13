@@ -44,6 +44,7 @@ h2 {
     width: 100%;
     padding: 8px;
     z-index: 10;
+    z-index: 8;
 }
 
 .saved-img {
@@ -65,15 +66,17 @@ h2 {
 }
 
 #deleteSelectedBtn {
+    text-size-adjust: 0.5rem;
     font-family: "Playfair Display";
     position: fixed;
-    top: 120px;
-    left: 50px;
-    padding: 10px 20px;
+    top: 154px;
+    left: 266px;
+    padding: 6px 7px;
     font-size: 16px;
     border: none;
-    background: #c4c4c4;
-    color: rgb(82, 82, 82);
+    outline: solid rgba(255, 255, 255, 0.685) 0px;
+    background: #5757577a;
+    color: rgb(255, 255, 255);
     border-radius: 10px;
     cursor: pointer;
     z-index: 10;
@@ -89,14 +92,14 @@ h2 {
 #clearBtn {
     font-family: "Playfair Display";
     position: fixed;
-    top: 120px;
-    left: 230px;
+    top: 110px;
+    left: 315px;
     z-index: 10;
-    padding: 10px 20px;
+    padding: 6px 6px;
     font-size: 16px;
     border: none;
-    background: #c4c4c4;
-    color: rgb(82, 82, 82);
+    background: #d60101;
+    color: rgb(255, 255, 255);
     border-radius: 10px;
     cursor: pointer;
 }
@@ -145,7 +148,8 @@ h2 {
 #navx {
     background: solid;
     background-color: #41414157;
-    padding: 50px 190px;
+    height: 100px;
+    width: 385px;
     position: fixed;
     align-items: center;
     justify-content: center;
@@ -156,5 +160,100 @@ h2 {
     font-weight: -10;
     text-align: left;
     opacity: 98%;
-    z-index: 9;
+    z-index: 10;
+}
+#boxsa{
+    font-family: "Playfair Display";
+    display: none;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    background: solid;
+    background-color: rgba(0, 0, 0, 0.226);
+    padding: 450px 210px;
+    position: absolute;
+    top: 0px;
+    z-index: 99;
+    backdrop-filter: blur(30px);
+    animation-name:opening ;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+@keyframes opening {
+    0%{
+        opacity: 0%;
+        backdrop-filter: blur(0px);
+    }
+    100%{
+    }
+}
+#boxs{
+    color: white;
+    background: solid;
+    background-color: #0000007a;
+    backdrop-filter: blur(10px);
+    padding: 20px 50px;
+    position: absolute;
+    top: 50%;
+    left: 12%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    z-index: 100;
+}
+.info{
+    font-size: 1.2rem;
+}
+.btn{
+    color: white;
+    padding: 10px 30px;
+    border-radius: 30px;
+    border: none;
+    z-index: 80;
+}
+.clr{
+    background-color: rgb(182, 1, 1);
+}
+.cans{
+    border: solid 2px white;
+    color: rgb(255, 255, 255);
+    background-color: rgba(209, 209, 209, 0);
+}
+#sn{
+    font-family: "Playfair Display";
+    font-weight: 50;
+    color: rgba(255, 255, 255, 0.514);
+    font-size: 1.5rem;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    top: 70%;
+    left: 17%;
+}
+#sni{
+    font-family: "Playfair Display";
+    font-weight: 50;
+    color: rgba(255, 255, 255, 0.514);
+    font-size: 1.5rem;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    top: 70%;
+    left: 27%;
+}
+.numb{
+opacity: 70%;
+font-family: "Playfair Display";
+color: white;
+font-size: 1.3rem;
+position: fixed;
+top: 80px;
+left: 30px;
+z-index: 70;
+animation-name: hediing;
+animation-duration: 15s;
+animation-iteration-count: infinite;
+}
+.topu{
+    font-size: 1.99rem;
 }
