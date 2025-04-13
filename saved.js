@@ -2,14 +2,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const gallery = document.getElementById("savedGallery");
     let userSession = localStorage.getItem("userSession");
     if (!userSession) {
-        gallery.innerHTML = "<p>No saved images.</p>";
+        gallery.innerHTML = "<p id='sni'>No saved images.</p>";
         return;
     }
 
     let savedImages = JSON.parse(localStorage.getItem(userSession)) || [];
 
     if (savedImages.length === 0) {
-        gallery.innerHTML = "<p>No saved wallpapers yet.</p>";
+        gallery.innerHTML = "<p id='sn'>No saved wallpapers yet !</p>";
         return;
     }
 
@@ -55,11 +55,69 @@ function deleteSelectedImages() {
     location.reload();
 }
 
-function clearSavedImages() {
+  // Show confirmation box
+  function showConfirmBox() {
+    document.getElementById("boxsa").style.display = "block";
+  }
+
+  // Hide box (on Cancel)
+  function hide() {
+    document.getElementById("boxsa").style.display = "none";
+  }
+
+  // Clear saved images + hide box
+  function clearSavedImages() {
     let userSession = localStorage.getItem("userSession");
     if (userSession) {
-        localStorage.removeItem(userSession);
-        alert("All saved images cleared!");
-        location.reload();
+      localStorage.removeItem(userSession);
+      alert("All saved images cleared!");
+      document.getElementById("boxsa").style.display = "none"; // ✅ Hide confirmation
+      location.reload(); // Optional refresh
     }
+  }
+  function loadSavedImages() {
+    const userSession = localStorage.getItem("userSession");
+
+    if (!userSession) {
+        document.getElementById("savedGallery").innerHTML = "<p id='sn'>No saved images.</p>";
+        document.getElementById("count").textContent = "0";
+        return;
+    }
+
+    const savedImages = JSON.parse(localStorage.getItem(userSession)) || [];
+    const gallery = document.getElementById("savedGallery");
+    const countElement = document.getElementById("count");
+
+    gallery.innerHTML = ""; // Clear gallery first
+    countElement.textContent = savedImages.length; // ✅ Set correct count
+
+    if (savedImages.length === 0) {
+        gallery.innerHTML = "<p id='sni'>No saved images.</p>";
+        return;
+    }
+
+    savedImages.forEach(url => {
+        const imgContainer = document.createElement("div");
+        imgContainer.className = "image-container";
+
+        const img = document.createElement("img");
+        img.src = url;
+        img.className = "saved-img";
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.className = "select-checkbox";
+        checkbox.value = url;
+
+        imgContainer.appendChild(checkbox);
+        imgContainer.appendChild(img);
+        gallery.appendChild(imgContainer);
+    });
 }
+document.addEventListener("DOMContentLoaded", function () {
+  loadSavedImages();
+});
+
+
+
+
