@@ -3,57 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wallpaper Preview</title>
-    <link rel="stylesheet" href="preview.css">
-    <!--Fonts sed from google fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-
+    <title>Saved Wallpapers</title>
+    <link rel="stylesheet" href="saved.css">
+        <!--Fonts sed from google fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
-<body background="grey">
-    
-    <div id="top"> </div>
-    <img id="bg" src="#" alt="animation">
-    <header>
-        <a id="one" href="index.html" class="back-btn">Back</a>
-    </header>
-    <h1 class="mainttxt">WallSort</h1>
-    <main class="preview-container">
-        <img id="preview-image" src="#" alt="Wallpaper Preview" loading="lazy">
+<body>
+
+    <a id="one" href="index.html" class="back-btn">Back</a>
+
+    <img id="bg" src="kiske.jpg" href="kiske.jpg">
+    <div id="navx">.</div>
+    <h2>Your, Saved Images</h2>
+    <div id="savedGallery"></div>
 
 
-        <div id="navx">.</div>
-        <div id="lines">
-        <h2 id="imageTitle"></h2>
-        <p id="imageDesc"></p>
+    <button id="deleteSelectedBtn" onclick="deleteSelectedImages()">Delete Selected</button>
+    <button id="clearBtn" onclick="showConfirmBox()">Clear All</button>
+
+    <div id="boxsa">
+        <div id="boxs">
+        <h4 class="msg info">
+            Conform to Clear all
+        </h4>
+        <div>
+            <button class="btn clr" onclick="clearSavedImages()">
+                    clear all
+            </button>
+            <button class="btn cans" onclick="hide()">
+                    cancel
+            </button>
         </div>
-        
-        <a id="download-btn" href="#" download class="download-btn"><img id="sss" src="download.png">  Download</a>
-        <button class="download-btn-two" onclick="shareContent()"><img id="ss" src="shereGoogle.png">  Share</button>
-        <button class="download-btn-two-three" onclick="saveImage()"><img id="saves" src="saveGoogle.png"></button>
-        
-
-
-        <div class="contact">
-            <a class="contact id" href="#">Contact us</a><br><br>
-            <a class="contact number" href="#">Contact : 0000000000</a><br><br>
-            <a class="contact support" href="#">INSTAGRAM</a>
         </div>
-
-
-        <!--loader for image scureently not in use-->
-        <div id="loader"></div>
-        <div class="loader-spinner"></div>
-    </main>
-    
-    <div id="swipeGuide" class="swipe-guide">
-        👉 Swipe left and right to navigate wallpapers 👈
     </div>
+
+    <h3 id="savedCount" class="numb">
+<span id="count" class="topu">0 </span>  .Saved Wallpaper's  
+    </h3>
     
 
-<script src="preview.js"></script>
-    
+    <script src="saved.js"></script>
+
 
 </body>
 </html>
