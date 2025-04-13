@@ -53,68 +53,31 @@ document.addEventListener("DOMContentLoaded", function () {
         touchStartX = touchEndX = 0;
     });
 
-    // ✅ Fetch & Load Images from JSON
-    fetch("data.json")
-        .then(response => response.json())
-        .then(data => {
-            const jsonGallery = document.getElementById("jsonGallery");
-            jsonGallery.innerHTML = ""; // Clear previous content
-
-            data.forEach(item => {
-                let wallpaperDiv = document.createElement("div");
-                wallpaperDiv.classList.add("wallpaper");
-
-                wallpaperDiv.innerHTML = `
-                    <img src="${item.src}" alt="${item.name}">
-                    <button class="like-btn" data-src="${item.src}" data-liked="false">❤️ <span>0</span></button>
-                    <button class="save-btn" data-src="${item.src}">💾 Save</button>
-                `;
-
-                jsonGallery.appendChild(wallpaperDiv);
-            });
-
-            updateLikeButtons();
-            updateSavedImages();
-        })
-        .catch(error => console.error("Error loading images:", error));
-
-        function toggleLike() {
-            const imageUrl = decodeURIComponent(new URLSearchParams(window.location.search).get("image"));
-            let likes = JSON.parse(localStorage.getItem("likes")) || {};
-            let likedImages = JSON.parse(localStorage.getItem("liked")) || [];
-        
-            const isLiked = likedImages.includes(imageUrl);
-        
-            if (isLiked) {
-                likes[imageUrl] = Math.max((likes[imageUrl] || 1) - 1, 0);
-                likedImages = likedImages.filter(img => img !== imageUrl);
-                document.querySelector(".like-btn").innerHTML = `❤️ <span id="like-count">${likes[imageUrl]}</span>`;
-            } else {
-                likes[imageUrl] = (likes[imageUrl] || 0) + 1;
-                likedImages.push(imageUrl);
-                document.querySelector(".like-btn").innerHTML = `💖 <span id="like-count">${likes[imageUrl]}</span>`;
-            }
-        
-            localStorage.setItem("likes", JSON.stringify(likes));
-            localStorage.setItem("liked", JSON.stringify(likedImages));
+});
+    function saveImage() {
+        let imageUrl = document.getElementById("preview-image").src;
+    
+        // Create a unique session key for each user (if not created)
+        if (!localStorage.getItem("userSession")) {
+            localStorage.setItem("userSession", "user_" + Date.now()); // Unique ID
         }
-        
-        // ✅ Load Like Count on Page Load
-        document.addEventListener("DOMContentLoaded", function () {
-            const imageUrl = decodeURIComponent(new URLSearchParams(window.location.search).get("image"));
-            const likes = JSON.parse(localStorage.getItem("likes")) || {};
-            const likedImages = JSON.parse(localStorage.getItem("liked")) || [];
-        
-            const count = likes[imageUrl] || 0;
-            const isLiked = likedImages.includes(imageUrl);
-        
-            const likeBtn = document.querySelector(".like-btn");
-            if (likeBtn) {
-                likeBtn.innerHTML = `${isLiked ? "💖" : "❤️"} <span id="like-count">${count}</span>`;
-            }
-        });
-        
-    });
+    
+        let userSession = localStorage.getItem("userSession"); // Get session ID
+        let savedImages = JSON.parse(localStorage.getItem(userSession)) || [];
+    
+        // Check if image already exists
+        if (savedImages.includes(imageUrl)) {
+            alert("Image already saved!");
+            return; // Stop further execution
+        }
+    
+        // Save image if not already saved
+        savedImages.push(imageUrl);
+        localStorage.setItem(userSession, JSON.stringify(savedImages));
+    
+        alert("Image saved to your collection!");
+    }
+
     //shere
     function shareContent() {
         if (navigator.share) {
@@ -129,20 +92,64 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Sharing is not supported on this browser.");
         }
     }
-  function saveImage() {
-    let imageUrl = document.getElementById("preview-image").src;
+    function loadSavedImages() {
+    let userSession = localStorage.getItem("userSession");
 
-    // Create a unique session key for each user (if not created)
-    if (!localStorage.getItem("userSession")) {
-      localStorage.setItem("userSession", "user_" + Date.now()); // Unique ID
+    if (!userSession) {
+        document.getElementById("savedGallery").innerHTML = "<p>No saved images.</p>";
+        document.getElementById("count").textContent = 0;
+        return;
     }
 
-    let userSession = localStorage.getItem("userSession"); // Get user session ID
     let savedImages = JSON.parse(localStorage.getItem(userSession)) || [];
 
-    // Add new image
-    savedImages.push(imageUrl);
-    localStorage.setItem(userSession, JSON.stringify(savedImages));
+    document.getElementById("count").textContent = savedImages.length; // ✅ update count
 
-    alert("Image saved to your collection!");
-  }
+    let gallery = document.getElementById("savedGallery");
+    gallery.innerHTML = ""; // Clear before loading
+
+    if (savedImages.length === 0) {
+        gallery.innerHTML = "<p>No saved images.</p>";
+        return;
+    }
+
+    savedImages.forEach(url => {
+        let imgContainer = document.createElement("div");
+        imgContainer.className = "image-container";
+
+        let img = document.createElement("img");
+        img.src = url;
+        img.className = "saved-img";
+
+        let checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.className = "select-checkbox";
+        checkbox.value = url;
+
+        imgContainer.appendChild(checkbox);
+        imgContainer.appendChild(img);
+        gallery.appendChild(imgContainer);
+    });
+}
+// ✅ One-time swipe guide popup
+function showSwipeGuideOnce() {
+    if (!localStorage.getItem("swipeGuideShown")) {
+        const guide = document.getElementById("swipeGuide");
+        guide.classList.add("show");
+
+        setTimeout(() => {
+            guide.classList.remove("show");
+        }, 10000); // Hide after 4 seconds
+
+        localStorage.setItem("swipeGuideShown", "true"); // Don't show again
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    showSwipeGuideOnce();
+});
+
+
+
+
+    
