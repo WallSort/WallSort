@@ -388,6 +388,20 @@ document.querySelector(".srcs").addEventListener("click", function () {
 
     });
 
+    //analisys
+    wallpaperDiv.addEventListener("click", function () {
+        gtag("event", "wallpaper_click", {
+          image: item.name
+        });
+      });
+//s
+gtag("event", "page_view", {
+    page_title: "WallSort",
+    page_location: window.location.href,
+    page_path: "/index.html"
+  });
+        
+
     
 
     
