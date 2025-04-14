@@ -45,9 +45,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("touchend", () => {
         if (touchStartX === 0 || touchEndX === 0) return;
         let swipeDistance = touchEndX - touchStartX;
-        if (swipeDistance > 50) {
+        if (swipeDistance > 140) {
             showImage(currentIndex - 1);
-        } else if (swipeDistance < -50) {
+        } else if (swipeDistance < -140) {
             showImage(currentIndex + 1);
         }
         touchStartX = touchEndX = 0;
