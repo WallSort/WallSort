@@ -400,6 +400,23 @@ gtag("event", "page_view", {
     page_location: window.location.href,
     page_path: "/index.html"
   });
+
+//data sort baced on us srch
+let searches = JSON.parse(localStorage.getItem("searchHistory")) || [];
+searches.push(userInput); // Add current search
+localStorage.setItem("searchHistory", JSON.stringify(searches));
+
+let counts = {};
+searches.forEach(keyword => {
+  counts[keyword] = (counts[keyword] || 0) + 1;
+});
+
+const sortedWallpapers = allWallpapers.sort((a, b) => {
+  let aMatch = counts[a.name] || counts[a.keywords?.join(" ")] || 0;
+  let bMatch = counts[b.name] || counts[b.keywords?.join(" ")] || 0;
+  return bMatch - aMatch; // Descending order
+});
+
         
 
     
