@@ -1109,7 +1109,6 @@ header {
         min-width: 10px;
         backdrop-filter: blur(30px);
     }
-    
     .popup-menu button {
         gap: 4px;
         display: block;
@@ -1271,3 +1270,4 @@ header {
     background-color: black;
     background: linear-gradient(to left, #000000 0%, transparent 100%);
 }
+
