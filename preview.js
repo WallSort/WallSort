@@ -148,7 +148,22 @@ function showSwipeGuideOnce() {
 document.addEventListener("DOMContentLoaded", function () {
     showSwipeGuideOnce();
 });
-
+//analisys
+wallpaperDiv.addEventListener("click", function () {
+    gtag("event", "wallpaper_click", {
+      image: item.name
+    });
+  });
+//anlyse download
+gtag("event", "download_wallpaper", {
+    image: imageUrl
+  });
+    //s
+    gtag("event", "page_view", {
+        page_title: "Wallpaper Preview",
+        page_location: window.location.href,
+        page_path: "/preview.html"
+      });  
 
 
 
