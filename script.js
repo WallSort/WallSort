@@ -400,101 +400,86 @@ gtag("event", "page_view", {
     page_location: window.location.href,
     page_path: "/index.html"
   });
-
-
-
-//data sort baced on us srch
-document.addEventListener("DOMContentLoaded", function () {
-    const searchBar = document.getElementById("searchBar");
-    const jsonGallery = document.getElementById("jsonGallery");
-
-    // Track search keywords
-    searchBar.addEventListener("input", function () {
-        const keyword = searchBar.value.trim().toLowerCase();
-        if (keyword.length > 2) {
-            saveSearch(keyword);
-            searchWallpapers(keyword);
-        } else {
-            showDefaultOrSuggested();
-        }
-    });
-
-    // Save search history to localStorage
-    function saveSearch(keyword) {
-        let searches = JSON.parse(localStorage.getItem("searchHistory")) || [];
-
-        // Don't save duplicates
-        if (!searches.includes(keyword)) {
-            searches.push(keyword);
-            localStorage.setItem("searchHistory", JSON.stringify(searches));
-        }
-    }
-
-    // Fetch and render wallpapers
-    fetch("data.json")
-        .then(response => response.json())
-        .then(data => {
-            window.allWallpapers = data;
-            showDefaultOrSuggested(); // First load
-        });
-
-    // Show based on history or default
-    function showDefaultOrSuggested() {
-        const searches = JSON.parse(localStorage.getItem("searchHistory")) || [];
-        if (searches.length >= 3) {
-            const filtered = filterBySearchHistory(searches);
-            displayWallpapers(filtered);
-        } else {
-            displayWallpapers(window.allWallpapers); // default
-        }
-    }
-
-    // Filter wallpapers based on user search history (keywords)
-    function filterBySearchHistory(searches) {
-        return window.allWallpapers.filter(wallpaper => {
-            return searches.some(search =>
-                wallpaper.keywords?.join(" ").toLowerCase().includes(search)
-            );
-        });
-    }
-
-    // Show wallpapers in gallery
-    function displayWallpapers(wallpapers) {
-        jsonGallery.innerHTML = "";
-
-        if (wallpapers.length === 0) {
-            jsonGallery.innerHTML = "<p>No wallpapers found.</p>";
-            return;
-        }
-
-        wallpapers.forEach(item => {
-            let wallpaperDiv = document.createElement("div");
-            wallpaperDiv.classList.add("wallpaper");
-            wallpaperDiv.setAttribute("data-name", item.name.toLowerCase());
-            wallpaperDiv.setAttribute("data-keywords", item.keywords.join(" ").toLowerCase());
-
-            wallpaperDiv.innerHTML = `
-                <img src="${item.src}" alt="${item.name}" loading="lazy">
-            `;
-
-            wallpaperDiv.addEventListener("click", function () {
-                const encodedSrc = encodeURIComponent(item.src);
-                const encodedTitle = encodeURIComponent(item.name);
-                const encodedDesc = encodeURIComponent(item.description);
-                window.location.href = `preview.html?image=${encodedSrc}&title=${encodedTitle}&desc=${encodedDesc}`;
-            });
-
-            jsonGallery.appendChild(wallpaperDiv);
-        });
-    }
-
-    // Re-trigger suggestion display on load
-    showDefaultOrSuggested();
-});
-
-
         
 
+//tocj
+ 
+function addLongPressEffect() {
+    let longPressTimer;
+
+    document.querySelectorAll(".wallpaper img").forEach(img => {
+        img.addEventListener("touchstart", function (e) {
+            longPressTimer = setTimeout(() => {
+                selectedImage = img.src;
+                showPopup(e.touches[0].clientX, e.touches[0].clientY);
+            }, 500); // 500ms long press
+        });
+
+        img.addEventListener("touchend", function () {
+            clearTimeout(longPressTimer);
+        });
+
+        img.addEventListener("touchcancel", function () {
+            clearTimeout(longPressTimer);
+        });
+
+        img.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+            selectedImage = img.src;
+            showPopup(e.clientX, e.clientY);
+        });
+    });
+}
+
+function showPopup(x, y) {
+    let popupMenu = document.getElementById("popupMenu");
+    let overlay = document.querySelector(".popup-overlay");
     
+    popupMenu.style.left = `${x}px`;
+    popupMenu.style.top = `${y + window.scrollY}px`; // Add scroll position
+    popupMenu.style.display = "block";
+    overlay.style.display = "block";
+
+    // Attach Save and Share button events after popup is displayed
+    document.getElementById("saveBtn").addEventListener("click", saveImage);
+    document.getElementById("shareBtn").addEventListener("click", shareImage);
+
+    overlay.addEventListener("click", () => {
+        popupMenu.style.display = "none";
+        overlay.style.display = "none";
+    });
+}
+function saveImage() {
+    if (selectedImage) {
+        // Retrieve previously saved images, or initialize an empty array if none exist
+        let savedImages = JSON.parse(localStorage.getItem("savedImages")) || [];
+
+        // Check if the image is already saved
+        if (!savedImages.includes(selectedImage)) {
+            savedImages.push(selectedImage);  // Add the selected image source
+            localStorage.setItem("savedImages", JSON.stringify(savedImages));  // Store updated list in localStorage
+            alert("Image saved successfully!");
+        } else {
+            alert("This image is already saved!");
+        }
+    }
+}
+
+
+
+function shareImage() {
+    if (selectedImage) {
+        if (navigator.share) {
+            navigator.share({
+                title: "Check out this wallpaper",
+                url: selectedImage
+            }).catch((error) => {
+                alert("Error sharing the image.");
+            });
+        } else {
+            alert("Share feature not supported on this device.");
+        }
+    }
+}
 
     
