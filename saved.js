@@ -118,6 +118,17 @@ document.addEventListener("DOMContentLoaded", function () {
   loadSavedImages();
 });
 
+//analyse download
+gtag("event", "download_wallpaper", {
+  image: imageUrl
+});
+gtag("event", "page_view", {
+  page_title: "Saved Wallpapers",
+  page_location: window.location.href,
+  page_path: "/saved.html"
+});
+
+
 
 
 
