@@ -128,6 +128,95 @@ gtag("event", "page_view", {
   page_path: "/saved.html"
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const searchBar = document.getElementById("searchBar");
+  const jsonGallery = document.getElementById("jsonGallery");
+
+  // Track search keywords
+  searchBar.addEventListener("input", function () {
+      const keyword = searchBar.value.trim().toLowerCase();
+      if (keyword.length > 2) {
+          saveSearch(keyword);
+          searchWallpapers(keyword);
+      } else {
+          showDefaultOrSuggested();
+      }
+  });
+
+  // Save search history to localStorage
+  function saveSearch(keyword) {
+      let searches = JSON.parse(localStorage.getItem("searchHistory")) || [];
+
+      // Don't save duplicates
+      if (!searches.includes(keyword)) {
+          searches.push(keyword);
+          localStorage.setItem("searchHistory", JSON.stringify(searches));
+      }
+  }
+
+  // Fetch and render wallpapers
+  fetch("data.json")
+      .then(response => response.json())
+      .then(data => {
+          window.allWallpapers = data;
+          showDefaultOrSuggested(); // First load
+      });
+
+  // Show based on history or default
+  function showDefaultOrSuggested() {
+      const searches = JSON.parse(localStorage.getItem("searchHistory")) || [];
+      if (searches.length >= 3) {
+          const filtered = filterBySearchHistory(searches);
+          displayWallpapers(filtered);
+      } else {
+          displayWallpapers(window.allWallpapers); // default
+      }
+  }
+
+  // Filter wallpapers based on user search history (keywords)
+  function filterBySearchHistory(searches) {
+      return window.allWallpapers.filter(wallpaper => {
+          return searches.some(search =>
+              wallpaper.keywords?.join(" ").toLowerCase().includes(search)
+          );
+      });
+  }
+
+  // Show wallpapers in gallery
+  function displayWallpapers(wallpapers) {
+      jsonGallery.innerHTML = "";
+
+      if (wallpapers.length === 0) {
+          jsonGallery.innerHTML = "<p>No wallpapers found.</p>";
+          return;
+      }
+
+      wallpapers.forEach(item => {
+          let wallpaperDiv = document.createElement("div");
+          wallpaperDiv.classList.add("wallpaper");
+          wallpaperDiv.setAttribute("data-name", item.name.toLowerCase());
+          wallpaperDiv.setAttribute("data-keywords", item.keywords.join(" ").toLowerCase());
+
+          wallpaperDiv.innerHTML = `
+              <img src="${item.src}" alt="${item.name}" loading="lazy">
+          `;
+
+          wallpaperDiv.addEventListener("click", function () {
+              const encodedSrc = encodeURIComponent(item.src);
+              const encodedTitle = encodeURIComponent(item.name);
+              const encodedDesc = encodeURIComponent(item.description);
+              window.location.href = `preview.html?image=${encodedSrc}&title=${encodedTitle}&desc=${encodedDesc}`;
+          });
+
+          jsonGallery.appendChild(wallpaperDiv);
+      });
+  }
+
+  // Re-trigger suggestion display on load
+  showDefaultOrSuggested();
+});
+
+
 
 
 
