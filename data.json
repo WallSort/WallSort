@@ -1,5 +1,13 @@
 [
     {
+      "src": "https://drive.google.com/uc?export=view&id=1-bhfaBzEzsxaxK7TxWHv6hMxGTSGQZ_D",
+      "name": "Monkey D Luffy",
+      "description": "One Piece anime hero",
+      "color": "red",
+      "likes": 0,
+      "keywords": ["Monkey D. Luffy", "Luffy", "Straw Hat", "One Piece", "Pirate King", "Future Pirate King", "Gomu Gomu no Mi", "Sun God Nika", "Emperor of the Sea", "Shonen Jump", "Anime", "Mugiwara", "Rubber Powers", "Wano", "Luffy Gear 5"]
+    }
+    {
         "src": "images/ishida.jpg",
         "name": "Ishida Uryu",
         "description": "A Quincy from Bleach.",
