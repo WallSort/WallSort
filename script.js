@@ -481,5 +481,33 @@ function shareImage() {
         }
     }
 }
+////lazy load
+  document.addEventListener("DOMContentLoaded", function() {
+            // Find all images on the page
+            const images = document.querySelectorAll('img');
 
+            // Move src to data-src and set a placeholder
+            images.forEach(img => {
+                img.setAttribute('data-src', img.src);
+                img.src = ''; // Clear the original src to prevent it from loading immediately
+                img.classList.add('lazy');
+            });
+
+            // Set up the Intersection Observer for lazy loading
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src; // Set the actual src from data-src
+                        img.classList.remove('lazy'); // Optional: Remove lazy class
+                        observer.unobserve(img); // Stop observing the image once it's loaded
+                    }
+                });
+            }, { rootMargin: '0px 0px 50px 0px' }); // Load a bit before the image is in view
+
+            // Observe each image with lazy class
+            images.forEach(img => {
+                observer.observe(img);
+            });
+        });
     
