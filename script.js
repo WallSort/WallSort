@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
         img.addEventListener("touchstart", () => {
             touchTimer = setTimeout(() => {
                 alert("Long press is disabled.");
-            }, 1300); // 500ms delay (adjust if needed)
+            }, 500); // 500ms delay (adjust if needed)
         });
 
         img.addEventListener("touchend", () => clearTimeout(touchTimer));
@@ -222,7 +222,7 @@ fetch("data.json")
                 longPressTimeout = setTimeout(() => {
                     selectedImage = img.src;
                     showPopup(e.touches[0].clientX, e.touches[0].clientY);
-                }, 1110);
+                }, 2810);
             });
 
             img.addEventListener("touchend", () => clearTimeout(longPressTimeout));
