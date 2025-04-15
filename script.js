@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
         img.addEventListener("touchstart", () => {
             touchTimer = setTimeout(() => {
                 alert("Long press is disabled.");
-            }, 500); // 500ms delay (adjust if needed)
+            }, 1300); // 500ms delay (adjust if needed)
         });
 
         img.addEventListener("touchend", () => clearTimeout(touchTimer));
