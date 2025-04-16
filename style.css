@@ -831,6 +831,7 @@ header {
         font-weight:80;
         font-size:0.8rem;
         position:relative;
+        top: 120px;
         z-index:10;
     }
 
@@ -1189,6 +1190,7 @@ header {
         font-weight:80;
         font-size:0.8rem;
         position:relative;
+        top: 120px;
     }
  
 }
