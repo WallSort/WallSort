@@ -71,6 +71,14 @@
         "likes": 0,
         "color": "red"
       },
+          {
+        "src": "wall/luffyy.png",
+        "name": "Monkey D Luffy",
+        "description": "Pirate hero from One Piece.",
+        "keywords": ["Monkey D Luffy", "Luffy", "Straw Hat", "One Piece", "Gear 5", "Pirate King", "Sun God Nika", "Emperor of the Sea", "Anime", "Shonen Jump", "Dragon's Son", "Mugiwara", "Wano Arc", "Nakama", "D Monkey", "Haki Master", "Joyboy", "Eiichiro Oda", "Legendary Pirate", "Anime Protagonist"],
+        "likes": 0,
+        "color": "red"
+      },
       {
         "src": "wall/zen.png",
         "name": "Zenitsu Agatsuma",
