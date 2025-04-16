@@ -831,6 +831,7 @@ header {
         font-weight:80;
         font-size:0.8rem;
         position:relative;
+        z-index:10;
     }
 
     /* Color Picker Button */
