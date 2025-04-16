@@ -63,76 +63,76 @@
         "likes": 0,
         "color": "white"
     },
-    {
-    "src": "https://i.postimg.cc/KYhyS7PS/Untitled223.jpg",
-    "name": "Monkey D Luffy",
-    "description": "Pirate hero from One Piece.",
-    "keywords": ["Monkey D Luffy", "Luffy", "Straw Hat", "One Piece", "Gear 5", "Pirate King", "Sun God Nika", "Emperor of the Sea", "Anime", "Shonen Jump", "Dragon's Son", "Mugiwara", "Wano Arc", "Nakama", "D Monkey", "Haki Master", "Joyboy", "Eiichiro Oda", "Legendary Pirate", "Anime Protagonist"],
-    "likes": 0,
-    "color": "red"
-  },
-    {
-    "src": "https://i.postimg.cc/wx2SxXyZ/Untitled225-1.jpg",
-    "name": "Zenitsu Agatsuma",
-    "description": "Thunder user from Demon Slayer.",
-    "keywords": ["Zenitsu", "Zenitsu Agatsuma", "Demon Slayer", "Kimetsu no Yaiba", "Yellow Hair", "Thunder Breathing", "Anime", "Hashira", "Demon Hunter", "Lightning Speed", "Sleep Fighter"],
-    "likes": 0,
-    "color": "red"
-},
-{
-    "src": "https://i.postimg.cc/bNv4ZZ1J/Untitled258.jpg",
-    "name": "Portgas D. Ace",
-    "description": "Luffy’s brother from One Piece.",
-    "keywords": ["Portgas D. Ace", "Ace", "One Piece", "Luffy’s Brother", "Fire Fist", "Whitebeard Pirates", "Anime", "Devil Fruit", "Mera Mera no Mi", "Pirate", "Marineford War", "Gol D. Roger’s Son"],
-    "likes": 0,
-    "color": "red"
-},
-{
-    "src": "https://i.postimg.cc/dVkX9gHc/59e0cc0895e71158f5c303c391c7d0cd.jpg",
-    "name": "Toji Fushiguro",
-    "description": "Assassin from Jujutsu Kaisen.",
-    "keywords": ["Toji Fushiguro", "Jujutsu Kaisen", "Megumi’s Father", "Sorcerer Killer", "Anime", "Zenin Clan", "Heavenly Restriction", "Toji", "JJK", "Strongest Assassin", "Cursed Tools"],
-    "likes": 0,
-    "color": "red"
-},
-{
-    "src": "https://i.postimg.cc/3xsqf9V4/1ac9a9b1f663e24db50941daf69c0312.jpg",
-    "name": "Mahoraga’s Ring",
-    "description": "Summoning ring from Jujutsu Kaisen.",
-    "keywords": ["Mahoraga", "Mahoraga Ring", "Jujutsu Kaisen", "Ten Shadows Technique", "Megumi Fushiguro", "Shikigami", "JJK", "Anime", "Summon Ring", "Cursed Technique", "Heian Era"],
-    "likes": 0,
-    "color": "red"
-},
-{
-    "src": "https://i.postimg.cc/VNXVxnP7/vg.jpg",
-    "name": "Akagami Shanks",
-    "description": "Emperor pirate from One Piece.",
-    "keywords": ["Shanks", "Akagami", "Red-Haired Shanks", "One Piece", "Yonko", "Emperor of the Sea", "Anime", "Haki Master", "Roger’s Crew", "Pirate", "Luffy’s Mentor", "Legendary Swordsman"],
-    "likes": 0,
-    "color": "red"
-},
-  {
-    "src": "https://i.postimg.cc/8kqsFc4D/clrd.jpg",
-    "name": "Shigeo Kageyama",
-    "description": "Esper teen from Mob Psycho.",
-    "keywords": ["Shigeo Kageyama", "Mob", "Mob Psycho", "Mob Psycho 100", "anime", "esper", "Dimple", "Arataka Reigen", "Reigen Arataka", "three characters", "mob psycho trio", "black", "mob black hair", "anime psychic", "anime esper", "mob psycho wallpaper", "hd", "uhd", "good wall", "wallpaper"],
-    "likes": 0,
-    "color": "red"
-  },
-  {
-    "src": "https://i.postimg.cc/44tsS5vk/wall-6-20240713064743.png",
-    "name": "Brook",
-    "description": "Soul King from One Piece.",
-    "keywords": ["Brook", "One Piece", "anime", "skeleton", "Soul King", "Straw Hat Pirates", "musician", "ghost", "back", "black", "brook one piece", "anime skull", "hd", "uhd", "good wall", "wallpaper", "anime wallpaper"],
-    "likes": 0,
-    "color": "red"
-  },
-  {
-    "src": "https://i.postimg.cc/W14RT6Z4/20241202-190923.jpg",
-    "name": "Gurun no Gabimaru",
-    "description": "Ninja from Hell’s Paradise.",
-    "keywords": ["Gurun no Gabimaru", "Gabimaru", "Hell’s Paradise", "anime", "ninja", "black", "red", "flames", "gabimaru wallpaper", "hd", "uhd", "good wall", "anime assassin", "anime ninja", "shonen", "jigokuraku"],
-    "likes": 0,
-    "color": "red"
-  }
+      {
+        "src": "walls/luffy.png",
+        "name": "Monkey D Luffy",
+        "description": "Pirate hero from One Piece.",
+        "keywords": ["Monkey D Luffy", "Luffy", "Straw Hat", "One Piece", "Gear 5", "Pirate King", "Sun God Nika", "Emperor of the Sea", "Anime", "Shonen Jump", "Dragon's Son", "Mugiwara", "Wano Arc", "Nakama", "D Monkey", "Haki Master", "Joyboy", "Eiichiro Oda", "Legendary Pirate", "Anime Protagonist"],
+        "likes": 0,
+        "color": "red"
+      },
+      {
+        "src": "walls/zen.png",
+        "name": "Zenitsu Agatsuma",
+        "description": "Thunder user from Demon Slayer.",
+        "keywords": ["Zenitsu", "Zenitsu Agatsuma", "Demon Slayer", "Kimetsu no Yaiba", "Yellow Hair", "Thunder Breathing", "Anime", "Hashira", "Demon Hunter", "Lightning Speed", "Sleep Fighter"],
+        "likes": 0,
+        "color": "red"
+      },
+      {
+        "src": "walls/ace.png",
+        "name": "Portgas D. Ace",
+        "description": "Luffy’s brother from One Piece.",
+        "keywords": ["Portgas D. Ace", "Ace", "One Piece", "Luffy’s Brother", "Fire Fist", "Whitebeard Pirates", "Anime", "Devil Fruit", "Mera Mera no Mi", "Pirate", "Marineford War", "Gol D. Roger’s Son"],
+        "likes": 0,
+        "color": "red"
+      },
+      {
+        "src": "walls/toji.jpg",
+        "name": "Toji Fushiguro",
+        "description": "Assassin from Jujutsu Kaisen.",
+        "keywords": ["Toji Fushiguro", "Jujutsu Kaisen", "Megumi’s Father", "Sorcerer Killer", "Anime", "Zenin Clan", "Heavenly Restriction", "Toji", "JJK", "Strongest Assassin", "Cursed Tools"],
+        "likes": 0,
+        "color": "red"
+      },
+      {
+        "src": "walls/ring.png",
+        "name": "Mahoraga’s Ring",
+        "description": "Summoning ring from Jujutsu Kaisen.",
+        "keywords": ["Mahoraga", "Mahoraga Ring", "Jujutsu Kaisen", "Ten Shadows Technique", "Megumi Fushiguro", "Shikigami", "JJK", "Anime", "Summon Ring", "Cursed Technique", "Heian Era"],
+        "likes": 0,
+        "color": "red"
+      },
+      {
+        "src": "walls/akakhami.jpg",
+        "name": "Akagami Shanks",
+        "description": "Emperor pirate from One Piece.",
+        "keywords": ["Shanks", "Akagami", "Red-Haired Shanks", "One Piece", "Yonko", "Emperor of the Sea", "Anime", "Haki Master", "Roger’s Crew", "Pirate", "Luffy’s Mentor", "Legendary Swordsman"],
+        "likes": 0,
+        "color": "red"
+      },
+      {
+        "src": "walls/mob.png",
+        "name": "Shigeo Kageyama",
+        "description": "Esper teen from Mob Psycho.",
+        "keywords": ["Shigeo Kageyama", "Mob", "Mob Psycho", "Mob Psycho 100", "anime", "esper", "Dimple", "Arataka Reigen", "Reigen Arataka", "three characters", "mob psycho trio", "black", "mob black hair", "anime psychic", "anime esper", "mob psycho wallpaper", "hd", "uhd", "good wall", "wallpaper"],
+        "likes": 0,
+        "color": "red"
+      },
+      {
+      "src": "walls/zenn.png",
+      "name": "Zenitsu Agatsuma",
+      "description": "Thunder user from Demon Slayer.",
+      "keywords": ["Zenitsu", "Zenitsu Agatsuma", "Demon Slayer", "Kimetsu no Yaiba", "Yellow Hair", "Thunder Breathing", "Anime", "Hashira", "Demon Hunter", "Lightning Speed", "Sleep Fighter", "Anime Wallpaper", "HD", "UHD", "Good Wall", "Black"],
+      "likes": 0,
+      "color": "red"
+      }
+     {
+        "src": "walls/gabimaru.png",
+        "name": "Gurun no Gabimaru",
+        "description": "Ninja from Hell’s Paradise.",
+        "keywords": ["Gurun no Gabimaru", "Gabimaru", "Hell’s Paradise", "anime", "ninja", "black", "red", "flames", "gabimaru wallpaper", "hd", "uhd", "good wall", "anime assassin", "anime ninja", "shonen", "jigokuraku"],
+        "likes": 0,
+        "color": "red"
+      }
 ]
