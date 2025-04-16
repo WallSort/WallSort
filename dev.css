@@ -1,0 +1,127 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.container {
+  font-size: 60px;
+  position: fixed;
+  top: 20%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size:40px;
+  margin-bottom: 10px;
+  animation: color 10s  infinite;
+}
+@keyframes color {
+  0%{
+    color: white;
+  }
+  30%{
+    color: rgb(255, 255, 223);
+  }
+  55%{
+    color: rgb(255, 210, 210);
+  }
+  80%{
+    color: rgb(209, 255, 209);
+  }
+  100%{
+    color: white;
+  }
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  animation: color 10s  infinite;
+}
+
+.adsense-container {
+  margin: 30px 0;
+}
+
+.adsense-container iframe {
+  max-width: 100%;
+  margin: 20px 0;
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+/* Style for mobile devices */
+@media (max-width: 600px) {
+  h1 {
+      font-size: 28px;
+  }
+
+  p {
+      font-size: 16px;
+  }
+}
+#flow{
+  filter: blur(30px);
+  align-items: center;
+  overflow: hidden;
+  height: 30%;
+  width: 20%;
+  position: absolute;
+  top: 30%;
+  left: 125px;
+  animation-name: flows;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+}
+#bg{
+  position: absolute;
+  top: 20%;
+  left: 18px;
+  background: solid;
+  background-color: rgba(71, 71, 71, 0.315);
+  padding: 260px 190px;
+  border-radius: 40px;
+  backdrop-filter: blur(30px);
+  border: solid rgba(78, 78, 78, 0.596) 1px ;
+}
+@keyframes flows {
+  0%{
+    top: 30%;
+    left: 125px;
+    height: 30%;
+    width: 20%;
+  }
+  30%{
+    top: 10%;
+    left: 125px;
+    height: 10%;
+    width: 40%;
+  }
+  50%{
+    top: 30%;
+    left: 105px;
+    height: 50%;
+    width: 10%;
+  }
+  70%{
+    top: 60%;
+    left: 125px;
+    height: 10%;
+    width: 60%;
+  }
+  100%{
+    top: 30%;
+    left: 125px;
+    height: 30%;
+    width: 20%;
+  }
+}
