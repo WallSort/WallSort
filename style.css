@@ -588,6 +588,7 @@ header {
         filter: invert(15%);
         width: 45px;
         border-radius:10px;
+        z-index:4;
     }
     #serchBtnI{
         position: fixed;
