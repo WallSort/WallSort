@@ -1,5 +1,45 @@
-[    
-        {
+[     
+  {
+    "src": "wall/blackhole.png",
+    "name": "Black Hole",
+    "description": "Space phenomenon with immense gravity.",
+    "keywords": ["Black Hole", "Space", "Astronomy", "Gravity", "Cosmos", "Galaxy", "Sucks Everything", "Dark Matter", "Astrophysics", "Black", "Wallpaper", "HD", "UHD", "Good Wall", "Universe", "Science"],
+    "likes": 0,
+    "color": "red"
+  },
+  {
+    "src": "wall/deadpool.png",
+    "name": "Deadpool",
+    "description": "Funny antihero from Marvel.",
+    "keywords": ["Deadpool", "Marvel", "Superhero", "Antihero", "Wade Wilson", "Funny", "Merc with a Mouth", "X-Men", "Red Suit", "Comic Book", "Ryan Reynolds", "HD", "UHD", "Good Wall", "Marvel Universe"],
+    "likes": 0,
+    "color": "red"
+  },
+  {
+    "src": "wall/itachi.png",
+    "name": "Itachi Uchiha",
+    "description": "Sasuke’s brother from Naruto.",
+    "keywords": ["Itachi Uchiha", "Itachi", "Uchiha Clan", "Naruto", "Anime", "Sharingan", "Mangekyo", "Akatsuki", "Sasuke's Brother", "Ninja", "Anime Wallpaper", "HD", "UHD", "Good Wall", "Black", "Shinobi", "Genjutsu", "Konoha"],
+    "likes": 0,
+    "color": "red"
+  },
+  {
+    "src": "wall/milesmorals.png",
+    "name": "Miles Morales",
+    "description": "Black Spider-Man from Spider-Verse.",
+    "keywords": ["Miles Morales", "Spider-Man", "Black Spider-Man", "Across the Spider-Verse", "Marvel", "Superhero", "Multiverse", "Web Shooter", "Brooklyn", "Spider Suit", "HD", "UHD", "Good Wall", "Marvel Comics", "Animated"],
+    "likes": 0,
+    "color": "red"
+  },
+  {
+    "src": "wall/spiderman.png",
+    "name": "Peter Parker",
+    "description": "Classic Spider-Man from Marvel.",
+    "keywords": ["Peter Parker", "Spider-Man", "Marvel", "Superhero", "Wall Crawler", "Web Shooter", "Avengers", "Friendly Neighborhood", "Red and Blue Suit", "Spidey", "HD", "UHD", "Good Wall", "Marvel Comics"],
+    "likes": 0,
+    "color": "red"
+  },
+  {
         "src": "wall/messi.png",
         "name": "Lionel Messi",
         "description": "Famous footballer from Argentina.",
