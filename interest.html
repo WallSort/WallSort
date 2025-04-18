@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Interests - WallSort</title>
+        <!--Fonts sed from google fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-HE8EV70DS4"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'G-HE8EV70DS4');
+        </script>
+    <style>
+        body {
+            font-family: "Playfair Display", Arial, sans-serif;
+            text-align: center;
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+            color: white; /* Default text color */
+        }
+
+        .container {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-family: "Playfair Display", serif;
+            font-weight: 100;
+            margin-bottom: 20px;
+        }
+
+        #reset-interest-btn {
+
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: none;
+            padding: 10px 10px;
+            border-radius: 15px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            margin-left: 260px;
+            font-size: 1rem;
+            font-family: sans-serif;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        #reset-interest-btn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        #interest-wallpapers {
+            display: grid;
+            grid-gap: 8px;
+            padding: 10px;
+            margin: 0 auto; /* Center the grid */
+            /* Glassmorphism effect */
+            background-color: rgba(54, 54, 54, 0.3);
+            border: solid rgba(139, 139, 139, 0.205) 1px; /* Semi-transparent background */
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .wallpaper-item {
+            break-inside: avoid; /* Prevent image breaks within columns */
+            margin-bottom: 8px;
+            border-radius: 15px;
+            overflow: hidden; /* Clip images to rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .wallpaper-item img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .wallpaper-item img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Mobile devices (up to 600px width) - Force 2 columns */
+        @media (max-width: 600px) {
+            #interest-wallpapers {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Larger screens */
+        @media (min-width: 601px) {
+            #interest-wallpapers {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+
+        @media (min-width: 768px) {
+            #interest-wallpapers {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+
+        @media (min-width: 992px) {
+            #interest-wallpapers {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        #anim{
+            position: fixed;
+            top:50%;
+            left: 30%;
+            filter: blur(50px);
+            left: center;
+            width: 90%;
+            height: 50%;
+            animation-name: fluid;
+            animation-duration: 35s;
+            animation-iteration-count: infinite;
+            transform: scale(1);
+        }
+        #anime{
+            position: fixed;
+            top:10%;
+            left: 30%;
+            filter: blur(50px);
+            left: center;
+            width: 90%;
+            height: 50%;
+            animation-name: fluid;
+            animation-duration: 35s;
+            animation-iteration-count: infinite;
+            transform: scale(1);
+            z-index: 0;
+        }
+        @keyframes fluid {
+            0%{
+                transform: rotate(0deg);
+                height: 40%;
+                width: 60%;
+            }
+            10%{
+                transform: rotate(30deg);
+                height: 60%;
+                width: 30%;
+            }
+            30%{
+                transform: rotate(60deg);
+                height:40% ;
+                width: 60%;
+            }
+            40%{
+                transform: rotate(90deg);
+                height: 60%;
+                width: 30%;
+            }
+            50%{
+                transform: rotate(120deg);
+                height:40% ;
+                width: 60%;
+            }
+            60%{
+                transform: rotate(150deg);
+                height: 60%;
+                width: 30%;
+            }
+            70%{
+                transform: rotate(210deg);
+                height:40% ;
+                width: 60%;
+            }
+            80%{
+                transform: rotate(250deg);
+                height: 60%;
+                width: 30%;
+            }
+            90%{
+                transform: rotate(320deg);
+                height:50% ;
+                width: 40%;
+            }
+            100%{
+                transform: rotate(360deg);
+                height: 40%;
+                width: 60%;
+            }
+}
+    #reset{
+        transform: scale(1.01);
+    }
+    #txt{
+        font-weight: 700;
+        font-size: 3rem;
+        font-family: "Playfair Display";
+        margin-right: 180px;
+    }
+    .popup-overlay {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			background-color: rgba(0, 0, 0, 0.178);
+            backdrop-filter:blur(70px);
+			display: none;
+			align-items: center;
+			justify-content: center;
+			z-index: 1000;
+		}
+		.customize-popup {
+			background-color: rgba(0, 0, 0, 0.205);
+            backdrop-filter: blur(50px);
+			padding: 30px;
+			border-radius: 40px;
+			width: 70%;
+			max-width: 500px;
+		}
+		.popup-header {
+			font-size: 1.2rem;
+			margin-bottom: 20px;
+		}
+		.keywords-container {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+			justify-content: center;
+			margin-bottom: 20px;
+		}
+		.keyword-circle {
+			padding: 8px 13px;
+			background-color: #00000000;
+            border:solid white 1px;
+			border-radius: 20px;
+			cursor: pointer;
+			user-select: none;
+			transition: background-color 0.3s;
+		}
+		.keyword-circle.selected {
+			background-color: #77b9ff;
+			color: white;
+		}
+		.button-group button {
+			margin: 0 10px;
+		}
+        #customize-btn{
+            position: relative;
+            top:-68px;
+            left:35px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 15px;
+            font-size: 1rem;
+            font-family: "Playfair Display";
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+        .btn{
+            align-items: right;
+            margin-top:250px;
+            background-color: rgba(0, 0, 0, 0);
+            color: white;
+            border: solid white 1px;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-family: "Playfair Display";
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease; 
+        }
+        #save-keywords-btn{
+            margin-left: 90px;
+            align-items: right;
+            margin-top:50px;
+            background-color: #95ff9544; 
+            border: none;
+        }
+        #cancel-keywords-btn{
+            align-items: right;
+            margin-top:50px;
+            background-color: rgba(255, 0, 0, 0.356);
+            color: white;
+            border:none;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-family: "Playfair Display";
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;    
+        }
+        #one {
+        padding: 5px 10px;
+        font-size: 0.7rem;
+        background: #333;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .back-btn {
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    padding: 10px 15px;
+    background: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    position:static;
+    left: 0px;
+    margin-right: 330px;
+}
+    </style>
+</head>
+<body>
+    <a id="one" href="index.html" class="back-btn">Back</a>
+    <img id="anime" src="kiske.jpg">
+    <img id="anim" src="kiske.jpg">
+    <div class="container">
+        <h1 id="txt">For You</h1>
+        <button id="reset-interest-btn"><img id="reset" src="reset.png"></button>
+        <button id="customize-btn">Customize</button>
+        <div id="interest-wallpapers">
+            </div>
+    </div>
+    <div class="popup-overlay">
+		<div class="customize-popup">
+			<div class="popup-header">Select Your interest (Max 3)</div>
+			<div class="keywords-container"></div>
+			<div class="button-group">
+				<button class="btn" id="cancel-keywords-btn">Cancel</button>
+                <button class="btn" id="save-keywords-btn">Save</button>
+			</div>
+		</div>
+	</div>
+
+
+    <script>
+        // Function to get a URL parameter by name
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            const results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Function to load and display wallpapers based on a given keyword
+        async function loadInterestWallpapers(keyword) {
+            console.log("loadInterestWallpapers called with keyword:", keyword);
+            const wallpaperGrid = document.getElementById('interest-wallpapers');
+            wallpaperGrid.innerHTML = ""; // Clear previous wallpapers
+
+            try {
+                const response = await fetch('data.json');
+                const data = await response.json();
+                console.log("Data from data.json:", data);
+
+                const interestedWallpapers = data.filter(wallpaper =>
+                    wallpaper.keywords && wallpaper.keywords.includes(keyword)
+                );
+                console.log("Interested wallpapers:", interestedWallpapers);
+
+                // Shuffle the array of wallpapers
+                function shuffleArray(array) {
+                    for (let i = array.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [array[i], array[j]] = [array[j], array[i]];
+                    }
+                }
+                shuffleArray(interestedWallpapers);
+
+                if (interestedWallpapers.length > 0) {
+                    interestedWallpapers.forEach(wallpaper => {
+                        const wallpaperItem = document.createElement('div');
+                        wallpaperItem.classList.add('wallpaper-item');
+
+                        const img = document.createElement('img');
+                        img.src = wallpaper.src;
+                        img.alt = wallpaper.name;
+
+                        img.style.cursor = 'pointer'; // Indicate it's clickable
+
+                        // Redirect to preview page on click
+                        img.addEventListener('click', function() {
+                            const encodedSrc = encodeURIComponent(wallpaper.src);
+                            const encodedTitle = encodeURIComponent(wallpaper.name);
+                            const encodedDesc = encodeURIComponent(wallpaper.description || "");
+                            window.location.href = `preview.html?image=${encodedSrc}&title=${encodedTitle}&desc=${encodedDesc}`;
+                        });
+
+                        wallpaperItem.appendChild(img);
+                        wallpaperGrid.appendChild(wallpaperItem);
+                    });
+                } else {
+                    wallpaperGrid.innerHTML = `<p>No wallpapers found for the keyword: ${keyword}</p>`;
+                }
+
+            } catch (error) {
+                console.error("Error loading wallpapers:", error);
+                wallpaperGrid.innerHTML = "<p>Failed to load wallpapers.</p>";
+            }
+        }
+
+        // Function to randomly choose a keyword that has between 2 and 10 associated images
+        async function resetInterest() {
+            console.log("resetInterest called");
+            try {
+                const response = await fetch('data.json');
+                const data = await response.json();
+                console.log("Data in resetInterest:", data);
+
+                const keywordCounts = {};
+                data.forEach(wallpaper => {
+                    if (wallpaper.keywords && Array.isArray(wallpaper.keywords)) {
+                        wallpaper.keywords.forEach(keyword => {
+                            keywordCounts[keyword] = (keywordCounts[keyword] || 0) + 1;
+                        });
+                    }
+                });
+                console.log("Keyword counts:", keywordCounts);
+
+                const suitableKeywords = Object.keys(keywordCounts).filter(keyword => {
+                    const count = keywordCounts[keyword];
+                    return count >= 2 && count <= 10;
+                });
+                console.log("Suitable keywords:", suitableKeywords);
+
+                if (suitableKeywords.length > 0) {
+                    const randomIndex = Math.floor(Math.random() * suitableKeywords.length);
+                    const randomKeyword = suitableKeywords[randomIndex];
+                    console.log("Randomly chosen keyword:", randomKeyword);
+                    localStorage.setItem('currentInterestKeyword', randomKeyword); // Save to local storage
+                    loadInterestWallpapers(randomKeyword);
+                } else {
+                    const wallpaperGrid = document.getElementById('interest-wallpapers');
+                    wallpaperGrid.innerHTML = "<p>No suitable keywords found to reset interest.</p>";
+                    localStorage.removeItem('currentInterestKeyword'); // Clear any existing saved interest
+                }
+
+            } catch (error) {
+                console.error("Error resetting interest:", error);
+                alert("Failed to reset interest.");
+            }
+        }
+
+        // Initial load - Check local storage then URL
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("DOMContentLoaded fired");
+            const savedKeyword = localStorage.getItem('currentInterestKeyword');
+            const urlKeyword = getUrlParameter('keyword');
+            console.log("Saved keyword:", savedKeyword, "URL keyword:", urlKeyword);
+
+            if (savedKeyword) {
+                console.log("Loading from saved keyword:", savedKeyword);
+                loadInterestWallpapers(savedKeyword);
+            } else if (urlKeyword) {
+                console.log("Loading from URL keyword:", urlKeyword);
+                loadInterestWallpapers(urlKeyword);
+                localStorage.setItem('currentInterestKeyword', urlKeyword); // Save if loaded from URL
+            } else {
+                console.log("Loading with default keyword: featured");
+                loadInterestWallpapers("featured"); // Example: Load with 'featured' initially if no keyword
+                localStorage.setItem('currentInterestKeyword', "featured"); // Save default
+            }
+        });
+
+        // Event listener for the reset button
+        document.getElementById('reset-interest-btn').addEventListener('click', function() {
+            console.log("Reset button clicked");
+            resetInterest();
+        });
+
+        //dare
+        let allWallpapersData = []; // Store the full data from data.json
+		let selectedKeywords = []; // Array to hold currently selected keywords
+		const maxKeywords = 3; // Maximum number of selectable keywords
+
+        // Function to get a URL parameter by name
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            const results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Function to load and display wallpapers based on a given keyword or selected keywords
+        async function loadInterestWallpapers(keywordsToFilter) {
+            console.log("loadInterestWallpapers called with keywords:", keywordsToFilter);
+            const wallpaperGrid = document.getElementById('interest-wallpapers');
+            wallpaperGrid.innerHTML = ""; // Clear previous wallpapers
+
+            // Use stored data if available, otherwise fetch
+            let data = allWallpapersData;
+            if (data.length === 0) {
+                try {
+                    const response = await fetch('data.json');
+                    data = await response.json();
+					allWallpapersData = data; // Store the fetched data
+                    console.log("Data from data.json:", data);
+                } catch (error) {
+                    console.error("Error loading data.json:", error);
+                    wallpaperGrid.innerHTML = "<p>Failed to load wallpapers data.</p>";
+                    return; // Exit if data fetching fails
+                }
+            }
+
+
+            const interestedWallpapers = data.filter(wallpaper =>
+				// Filter based on the provided array of keywords
+                wallpaper.keywords && wallpaper.keywords.some(keyword => keywordsToFilter.includes(keyword))
+            );
+            console.log("Interested wallpapers:", interestedWallpapers);
+
+            // Shuffle the array of wallpapers
+            function shuffleArray(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+            }
+            shuffleArray(interestedWallpapers);
+
+            if (interestedWallpapers.length > 0) {
+                interestedWallpapers.forEach(wallpaper => {
+                    const wallpaperItem = document.createElement('div');
+                    wallpaperItem.classList.add('wallpaper-item');
+
+                    const img = document.createElement('img');
+                    img.src = wallpaper.src;
+                    img.alt = wallpaper.name;
+
+                    img.style.cursor = 'pointer'; // Indicate it's clickable
+
+                    // Redirect to preview page on click
+                    img.addEventListener('click', function() {
+                        const encodedSrc = encodeURIComponent(wallpaper.src);
+                        const encodedTitle = encodeURIComponent(wallpaper.name);
+                        const encodedDesc = encodeURIComponent(wallpaper.description || "");
+                        window.location.href = `preview.html?image=${encodedSrc}&title=${encodedTitle}&desc=${encodedDesc}`;
+                    });
+
+                    wallpaperItem.appendChild(img);
+                    wallpaperGrid.appendChild(wallpaperItem);
+                });
+            } else {
+                wallpaperGrid.innerHTML = `<p>No wallpapers found for the selected keywords.</p>`;
+            }
+
+        }
+
+		// Function to populate the customize pop-up with keywords
+		async function populateKeywordsPopup() {
+			const keywordsContainer = document.querySelector('.keywords-container');
+			keywordsContainer.innerHTML = ''; // Clear previous keywords
+
+			// Use stored data if available, otherwise fetch
+			let data = allWallpapersData;
+			if (data.length === 0) {
+				try {
+					const response = await fetch('data.json');
+					data = await response.json();
+					allWallpapersData = data; // Store the fetched data
+				} catch (error) {
+					console.error("Error loading data.json for keywords:", error);
+					keywordsContainer.innerHTML = "<p>Failed to load keywords.</p>";
+					return;
+				}
+			}
+
+			const keywordCounts = {};
+			data.forEach(wallpaper => {
+				if (wallpaper.keywords && Array.isArray(wallpaper.keywords)) {
+					wallpaper.keywords.forEach(keyword => {
+						keywordCounts[keyword] = (keywordCounts[keyword] || 0) + 1;
+					});
+				}
+			});
+
+			const suitableKeywords = Object.keys(keywordCounts).filter(keyword => {
+				return keywordCounts[keyword] > 3; // Keywords with more than 3 images
+			});
+
+			if (suitableKeywords.length > 0) {
+				suitableKeywords.forEach(keyword => {
+					const keywordCircle = document.createElement('div');
+					keywordCircle.classList.add('keyword-circle');
+					keywordCircle.textContent = keyword;
+					keywordCircle.dataset.keyword = keyword; // Store keyword in a data attribute
+
+					keywordCircle.addEventListener('click', function() {
+						this.classList.toggle('selected'); // Toggle selected class
+
+						const keyword = this.dataset.keyword;
+						if (this.classList.contains('selected')) {
+							if (selectedKeywords.length < maxKeywords) {
+								selectedKeywords.push(keyword);
+							} else {
+								this.classList.remove('selected'); // Deselect if max reached
+								alert(`You can select a maximum of ${maxKeywords} keywords.`);
+							}
+						} else {
+							selectedKeywords = selectedKeywords.filter(item => item !== keyword); // Remove if deselected
+						}
+						console.log("Selected keywords:", selectedKeywords);
+					});
+
+					keywordsContainer.appendChild(keywordCircle);
+				});
+			} else {
+				keywordsContainer.innerHTML = "<p>No keywords with more than 3 images found.</p>";
+			}
+		}
+
+
+        // Initial load - Check local storage then URL
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("DOMContentLoaded fired");
+
+			// Fetch data.json initially to populate allWallpapersData
+			fetch('data.json')
+				.then(response => response.json())
+				.then(data => {
+					allWallpapersData = data;
+					console.log("Initial data fetch successful:", allWallpapersData);
+
+					const savedKeyword = localStorage.getItem('currentInterestKeyword');
+					const urlKeyword = getUrlParameter('keyword');
+					console.log("Saved keyword:", savedKeyword, "URL keyword:", urlKeyword);
+
+					if (savedKeyword) {
+						console.log("Loading from saved keyword:", savedKeyword);
+						loadInterestWallpapers([savedKeyword]); // Load with the single saved keyword
+					} else if (urlKeyword) {
+						console.log("Loading from URL keyword:", urlKeyword);
+						loadInterestWallpapers([urlKeyword]); // Load with the single URL keyword
+						localStorage.setItem('currentInterestKeyword', urlKeyword); // Save if loaded from URL
+					} else {
+						console.log("Loading with default keyword: featured");
+						loadInterestWallpapers(["featured"]); // Example: Load with 'featured' initially if no keyword
+						localStorage.setItem('currentInterestKeyword', "featured"); // Save default
+					}
+				})
+				.catch(error => {
+					console.error("Error fetching data.json on initial load:", error);
+					const wallpaperGrid = document.getElementById('interest-wallpapers');
+					wallpaperGrid.innerHTML = "<p>Failed to load initial wallpapers.</p>";
+				});
+
+
+        });
+
+		// Event listener for the reset button
+		// (Included here for context, but you only asked for customize-related script)
+        document.getElementById('reset-interest-btn').addEventListener('click', function() {
+            console.log("Reset button clicked");
+            resetInterest();
+        });
+
+		// Event listener for the customize button
+		document.getElementById('customize-btn').addEventListener('click', function() {
+			console.log("Customize button clicked");
+			selectedKeywords = []; // Clear previous selections
+			populateKeywordsPopup(); // Populate the popup with keywords
+			document.querySelector('.popup-overlay').style.display = 'flex'; // Show the popup
+		});
+
+		// Event listener for the save button in the popup
+		document.getElementById('save-keywords-btn').addEventListener('click', function() {
+			console.log("Save button clicked with keywords:", selectedKeywords);
+			if (selectedKeywords.length > 0) {
+				// Save selected keywords (optional, depends on desired persistence)
+				// localStorage.setItem('customInterestKeywords', JSON.stringify(selectedKeywords));
+				loadInterestWallpapers(selectedKeywords); // Load wallpapers based on selected keywords
+			} else {
+				// Handle case where no keywords are selected (e.g., load all or show a message)
+				console.log("No keywords selected. Loading default or showing empty.");
+				// Example: Load all wallpapers if no keywords selected
+				// loadInterestWallpapers(allWallpapersData.flatMap(item => item.keywords).filter((value, index, self) => self.indexOf(value) === index));
+				// Example: Clear gallery if no keywords selected
+				document.getElementById('interest-wallpapers').innerHTML = "<p>Please select at least one keyword.</p>";
+			}
+			document.querySelector('.popup-overlay').style.display = 'none'; // Hide the popup
+		});
+
+		// Event listener for the cancel button in the popup
+		document.getElementById('cancel-keywords-btn').addEventListener('click', function() {
+			console.log("Cancel button clicked");
+			selectedKeywords = []; // Clear selections on cancel
+			document.querySelector('.popup-overlay').style.display = 'none'; // Hide the popup
+		});
+
+		// Event listener to close popup when clicking outside the popup content
+		document.querySelector('.popup-overlay').addEventListener('click', function(event) {
+			if (event.target === this) { // Check if the click is directly on the overlay
+				console.log("Clicked outside popup");
+				selectedKeywords = []; // Clear selections on outside click
+				document.querySelector('.popup-overlay').style.display = 'none'; // Hide the popup
+			}
+		});
+        //
+                // Variable to store the full data from data.json
+        let allWallpapersDataa = [];
+
+        // Key for storing the last search term from the main page
+        const lastSearchTermStorageKey = 'lastSearchTerm';
+
+
+        // --- Keep your existing renderWallpapersGrid function here ---
+        // This function takes an array of wallpaper objects and displays them
+        function renderWallpapersGrid(wallpapersToRender) {
+             const wallpaperGrid = document.getElementById('interest-wallpapers');
+             if (!wallpaperGrid) {
+                 console.error("Wallpaper grid element #interest-wallpapers not found!");
+                 return;
+             }
+
+             // Clear previous wallpapers
+             while (wallpaperGrid.firstChild) {
+                 wallpaperGrid.removeChild(wallpaperGrid.firstChild);
+             }
+
+             if (wallpapersToRender.length > 0) {
+                 wallpapersToRender.forEach(wallpaper => {
+                     const wallpaperItem = document.createElement('div');
+                     wallpaperItem.classList.add('wallpaper-item');
+
+                     const img = document.createElement('img');
+                     img.src = wallpaper.src;
+                     img.alt = wallpaper.name || 'Wallpaper'; // Added default alt text
+                     img.loading = 'lazy'; // Ensure lazy loading
+                     img.style.cursor = 'pointer'; // Indicate it's clickable
+
+                     // Redirect to preview page on click
+                     img.addEventListener('click', function() {
+                         const encodedSrc = encodeURIComponent(wallpaper.src);
+                         const encodedTitle = encodeURIComponent(wallpaper.name || '');
+                         const encodedDesc = encodeURIComponent(wallpaper.description || "");
+                         window.location.href = `preview.html?image=${encodedSrc}&title=${encodedTitle}&desc=${encodedDesc}`;
+                     });
+
+                     wallpaperItem.appendChild(img);
+                     wallpaperGrid.appendChild(wallpaperItem);
+                 });
+             } else {
+                 // Provide a message if no wallpapers are found
+                 const wallpaperGrid = document.getElementById('interest-wallpapers');
+                 const lastSearchTerm = localStorage.getItem(lastSearchTermStorageKey);
+                 let message = "No wallpapers found based on your interests.";
+                 if (lastSearchTerm) {
+                     message = `No popular interests found based on your search for "${lastSearchTerm}".`;
+                 }
+                 if(wallpaperGrid) {
+                     wallpaperGrid.innerHTML = `<p>${message}</p>`;
+                 }
+             }
+        }
+
+        // --- Keep your existing shuffleArray function here if needed ---
+         function shuffleArray(array) {
+             const shuffled = array.slice(); // Create a shallow copy
+             for (let i = shuffled.length - 1; i > 0; i--) {
+                 const j = Math.floor(Math.random() * (i + 1));
+                 [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+             }
+             return shuffled;
+         }
+
+
+        // --- Replace your existing DOMContentLoaded listener and initial loading functions with this ---
+        document.addEventListener('DOMContentLoaded', async function() {
+            console.log("DOMContentLoaded fired on interests page");
+
+            // Fetch data.json
+            try {
+                const response = await fetch('data.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                allWallpapersDataa = await response.json();
+                console.log("Initial data fetch successful on interests page.");
+
+                // Get the saved search term from localStorage
+                const savedSearchTerm = localStorage.getItem(lastSearchTermStorageKey);
+                console.log("Saved search term:", savedSearchTerm);
+
+                let wallpapersToDisplay = [];
+
+                if (savedSearchTerm) {
+                    // --- Logic to find frequent keywords based on the saved search term ---
+
+                    const lowerSearchTerm = savedSearchTerm.toLowerCase();
+                    // 1. Find wallpapers that match the saved search term
+                    const searchMatchedWallpapers = allWallpapersDataa.filter(item => {
+                        const name = item.name ? item.name.toLowerCase() : "";
+                        const desc = item.description ? item.description.toLowerCase() : "";
+                        const keywords = item.keywords ? item.keywords.join(" ").toLowerCase() : "";
+
+                        return name.includes(lowerSearchTerm) || desc.includes(lowerSearchTerm) || keywords.includes(lowerSearchTerm);
+                    });
+                    console.log("Wallpapers matching saved search term:", searchMatchedWallpapers);
+
+
+                    // 2. Count keywords within these matched wallpapers
+                    const keywordCounts = {};
+                    searchMatchedWallpapers.forEach(wallpaper => {
+                        if (wallpaper.keywords && Array.isArray(wallpaper.keywords)) {
+                            wallpaper.keywords.forEach(keyword => {
+                                // Convert keywords to lowercase for consistent counting
+                                const lowerKeyword = keyword.toLowerCase();
+                                keywordCounts[lowerKeyword] = (keywordCounts[lowerKeyword] || 0) + 1;
+                            });
+                        }
+                    });
+                     console.log("Keyword counts in search results:", keywordCounts);
+
+
+                    // 3. Identify keywords that appear at least 6 times
+                    const frequentKeywords = Object.keys(keywordCounts).filter(keyword => {
+                        return keywordCounts[keyword] >= 6; // Filter for keywords appearing >= 6 times
+                    });
+                     console.log("Frequent keywords (>= 6 times) in search results:", frequentKeywords);
+
+
+                    // 4. Filter the *entire* dataset for wallpapers containing these frequent keywords
+                    if (frequentKeywords.length > 0) {
+                        wallpapersToDisplay = allWallpapersDataa.filter(wallpaper =>
+                            wallpaper.keywords && Array.isArray(wallpaper.keywords) &&
+                            wallpaper.keywords.some(keyword => frequentKeywords.includes(keyword.toLowerCase()))
+                        );
+                         console.log("Wallpapers filtered by frequent keywords:", wallpapersToDisplay);
+                    } else {
+                         console.log("No frequent keywords found in search results, displaying empty.");
+                         wallpapersToDisplay = []; // No frequent keywords, display nothing
+                    }
+
+                } else {
+                    // --- If no saved search term, fall back to existing logic ---
+                    // This part uses your previous logic for loading based on
+                    // saved custom keywords, URL parameter, or single saved keyword.
+                    // Keep or adapt this based on how you want the page to behave
+                    // when there is no saved search term.
+
+                    const savedCustomKeywordsJson = localStorage.getItem('customInterestKeywords'); // Using the key from previous code
+                    const urlKeyword = getUrlParameter('keyword');
+                    const savedSingleKeyword = localStorage.getItem('currentInterestKeyword'); // Using the key from previous code
+
+                     if (savedCustomKeywordsJson) {
+                        try {
+                             const savedCustomKeywords = JSON.parse(savedCustomKeywordsJson);
+                             if (Array.isArray(savedCustomKeywords) && savedCustomKeywords.length > 0) {
+                                 console.log("Loading from saved custom keywords:", savedCustomKeywords);
+                                 // You would need a filterByKeywords function or similar here
+                                 wallpapersToDisplay = allWallpapersDataa.filter(wallpaper =>
+                                     wallpaper.keywords && Array.isArray(wallpaper.keywords) &&
+                                     savedCustomKeywords.some(keyword => wallpaper.keywords.includes(keyword))
+                                 );
+                             }
+                        } catch (e) {
+                            console.error("Error parsing saved custom keywords on load:", e);
+                        }
+                    }
+
+                    if (wallpapersToDisplay.length === 0 && urlKeyword) {
+                         console.log("Loading from URL keyword:", urlKeyword);
+                         // You would need a filterByKeywords function or similar here
+                         wallpapersToDisplay = allWallpapersDataa.filter(wallpaper =>
+                             wallpaper.keywords && Array.isArray(wallpaper.keywords) &&
+                             wallpaper.keywords.includes(urlKeyword)
+                         );
+                         // Decide if loading from URL should set saved state
+                         // localStorage.setItem('currentInterestKeyword', urlKeyword);
+                         // localStorage.removeItem('customInterestKeywords');
+                    }
+
+                     if (wallpapersToDisplay.length === 0 && savedSingleKeyword) {
+                         console.log("Loading from saved single keyword:", savedSingleKeyword);
+                         // You would need a filterByKeywords function or similar here
+                          wallpapersToDisplay = allWallpapersDataa.filter(wallpaper =>
+                             wallpaper.keywords && Array.isArray(wallpaper.keywords) &&
+                             wallpaper.keywords.includes(savedSingleKeyword)
+                         );
+                     }
+
+                    // If still no wallpapers from any saved state/URL, load a default
+                    if (wallpapersToDisplay.length === 0) {
+                         const defaultKeyword = "featured"; // Your chosen default
+                         console.log("No saved state, loading default keyword:", defaultKeyword);
+                         // You would need a filterByKeywords function or similar here
+                          wallpapersToDisplay = allWallpapersDataa.filter(wallpaper =>
+                             wallpaper.keywords && Array.isArray(wallpaper.keywords) &&
+                             wallpaper.keywords.includes(defaultKeyword)
+                         );
+                         // Optionally save the default
+                         // localStorage.setItem('currentInterestKeyword', defaultKeyword);
+                    }
+                    // -----------------------------------------------------------
+                }
+
+                // --- Render the determined set of wallpapers ---
+                // Optionally shuffle before rendering
+                const finalWallpapersToDisplay = shuffleArray(wallpapersToDisplay);
+                renderWallpapersGrid(finalWallpapersToDisplay);
+
+
+            } catch (error) {
+                console.error("Error fetching data or processing interests:", error);
+                const wallpaperGrid = document.getElementById('interest-wallpapers');
+                if(wallpaperGrid) {
+                    wallpaperGrid.innerHTML = "<p>Failed to load your interests.</p>";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
