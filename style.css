@@ -581,6 +581,15 @@ header {
         }
     }
 
+    #savess{
+        position: fixed;
+        left: 316px;
+        bottom: 20px;
+        filter: invert(15%);
+        width: 45px;
+        border-radius:10px;
+        z-index:4;
+    }
     #saves{
         position: fixed;
         left: 65px;
@@ -592,7 +601,7 @@ header {
     }
     #serchBtnI{
         position: fixed;
-        left: 175px;
+        left: 188px;
         bottom: 20px;
         filter: invert(15%);
         width: 45px;
@@ -601,7 +610,7 @@ header {
     #serchBtn{
         border:none;
         position: fixed;
-        left: 175px;
+        left: 195px;
         bottom: 20px;
         width: 45px;
         background: transparent;
@@ -631,7 +640,7 @@ header {
     #navx{
        background: solid;
        background-color: #3d3d3dc0;
-       padding: 25px 175px;
+       padding: 25px 45%;
        position: fixed;
        align-items: center;
        justify-content: center;
@@ -690,20 +699,13 @@ header {
     }
     
     /* Ensure images are unique (Fix repetition issue) */
-    .wallpaper:nth-child(even) {
-        order: 1;
-        z-index: 8;
-    }
-    .wallpaper:nth-child(odd) {
-        order: 2;
-        z-index: 5;
-    }
+
     
     /* Responsive Tweaks */
     @media (max-width: 500px) {
         #jsonGallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust minmax as needed */
+            grid-template-columns: repeat(auto-fill, auto-fill); /* Adjust minmax as needed */
             grid-gap: 14px; /* Keep a very small gap */
             padding: 15px;
             margin: 0 auto;
@@ -712,14 +714,10 @@ header {
             padding: 20px;
             backdrop-filter: blur(10px);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            /* Enable masonry layout */
-            grid-template-rows: masonry;
-            grid-auto-flow: dense; /* Helps in filling gaps */
-            align-items: start; /* Align items to the top */
         }
             @media (max-width: 600px) {
         #jsonGallery {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2,2fr);
         }
     }
     .popup-menu {
@@ -1291,4 +1289,4 @@ header {
     background-color: black;
     background: linear-gradient(to left, #000000 0%, transparent 100%);
 }
-
+}
