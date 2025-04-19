@@ -583,7 +583,7 @@ header {
 
     #savess{
         position: fixed;
-        left: 316px;
+        left: 73%;
         bottom: 20px;
         filter: invert(15%);
         width: 45px;
@@ -601,7 +601,7 @@ header {
     }
     #serchBtnI{
         position: fixed;
-        left: 188px;
+        left: 45%;
         bottom: 20px;
         filter: invert(15%);
         width: 45px;
