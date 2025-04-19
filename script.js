@@ -80,7 +80,7 @@ function renderGallery(wallpapersToRender) {
          const img = document.createElement("img");
          img.src = item.src;
          img.alt = item.name || "Wallpaper";
-         img.loading = "lazy"; // <<< ENSURED LAZY LOADING HERE >>>
+          // <<< ENSURED LAZY LOADING HERE >>>
 
          // Append the image to the wallpaper div
          wallpaperDiv.appendChild(img);
