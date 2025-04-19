@@ -24,6 +24,102 @@
     "color": "red"
   },
   {
+    "src": "wall/beach0001.png",
+    "name": "Vector Beach",
+    "description": "Artistic beach in vector style.",
+    "keywords": ["Vector Beach", "Beach", "Vector Art", "Ocean", "Sea", "Tropical", "Scenic", "Nature", "HD", "UHD", "Good Wall", "Wallpaper"],
+    "likes": 0,
+    "color": "red"
+  },
+  {
+    "src": "wall/earth0001.png",
+    "name": "Earth View",
+    "description": "Side view of Earth from space.",
+    "keywords": ["Earth", "Planet", "Earth View", "Space", "Blue Planet", "Astronomy", "Nature", "Cosmos", "Globe", "Wallpaper", "HD", "UHD", "Good Wall"],
+    "likes": 0,
+    "color": "red"
+  },
+  {
+    "src": "wall/itachi001.png",
+    "name": "Itachi Uchiha",
+    "description": "Sasuke’s brother from Naruto.",
+    "keywords": ["Itachi Uchiha", "Itachi", "Uchiha Clan", "Naruto", "Anime", "Sharingan", "Akatsuki", "Mangekyo", "Ninja", "Black", "Wallpaper", "HD", "UHD", "Good Wall", "Shonen"],
+    "likes": 0,
+    "color": "red"
+  },
+  {
+    "src": "wall/kakashi.png",
+    "name": "Team Kakashi",
+    "description": "Team 7 from Naruto anime.",
+    "keywords": ["Kakashi Hatake", "Naruto", "Sasuke", "Sakura", "Anime", "Team 7", "Sensei", "Shinobi", "Anime Wallpaper", "HD", "UHD", "Good Wall", "Konoha", "Shonen"],
+    "likes": 0,
+    "color": "red"
+  },
+  {
+    "src": "wall/kyorakshinsui0001.png",
+    "name": "Shunsui Kyōraku",
+    "description": "Captain from Bleach with pink kimono.",
+    "keywords": ["Shunsui Kyōraku", "Bleach", "Captain", "Anime", "Shinigami", "Pink Kimono", "Soul Society", "Anime Wallpaper", "HD", "UHD", "Good Wall", "Shonen"],
+    "likes": 0,
+    "color": "red"
+  },
+  {
+    "src": "wall/moon0011.png",
+    "name": "Distant Moon",
+    "description": "Isolated view of the moon.",
+    "keywords": ["Moon", "Lunar", "Space", "Astronomy", "Distant View", "Cosmos", "Night", "HD", "UHD", "Good Wall", "Wallpaper", "Nature"],
+    "likes": 0,
+    "color": "red"
+  },
+  {
+    "src": "wall/pattern.png",
+    "name": "Abstract Pattern",
+    "description": "Minimal abstract wallpaper design.",
+    "keywords": ["Pattern", "Abstract", "Minimal", "Design", "Shapes", "Modern Art", "Aesthetic", "Wallpaper", "HD", "UHD", "Good Wall"],
+    "likes": 0,
+    "color": "red"
+  },
+  {
+    "src": "wall/pattern001190.png",
+    "name": "Wavy Pattern",
+    "description": "Wave style pattern like iOS theme.",
+    "keywords": ["Pattern", "Wavy", "iOS Style", "Design", "Abstract", "Wave Art", "Minimal", "Aesthetic", "Wallpaper", "HD", "UHD", "Good Wall"],
+    "likes": 0,
+    "color": "red"
+  },
+  {
+    "src": "wall/senery.png",
+    "name": "Sunset Scenery",
+    "description": "Vector art of sunset in mountains.",
+    "keywords": ["Scenery", "Sunset", "Mountains", "Vector Art", "Nature", "Sun", "Wallpaper", "HD", "UHD", "Good Wall", "Landscape", "Calm", "Outdoor"],
+    "likes": 0,
+    "color": "red"
+  },
+  {
+    "src": "wall/venom.jpg",
+    "name": "Venom",
+    "description": "Symbiote from Marvel universe.",
+    "keywords": ["Venom", "Marvel", "Symbiote", "Spider-Man", "Superhero", "Antihero", "Eddie Brock", "Comics", "Villain", "Black", "Wallpaper", "HD", "UHD", "Good Wall"],
+    "likes": 0,
+    "color": "red"
+  },
+  {
+    "src": "wall/sunrice.png",
+    "name": "Sunrise Mountains",
+    "description": "Vector sunrise over mountain peaks.",
+    "keywords": ["Sunrise", "Mountains", "Vector Art", "Nature", "Morning", "Sun", "Wallpaper", "HD", "UHD", "Good Wall", "Scenery", "Calm", "Outdoor"],
+    "likes": 0,
+    "color": "red"
+  },
+  {
+    "src": "wall/wave0203.png",
+    "name": "Ocean Waves",
+    "description": "Close-up vector of beach waves.",
+    "keywords": ["Waves", "Ocean", "Beach", "Vector Art", "Nature", "Water", "Sea", "Scenic", "Wallpaper", "HD", "UHD", "Good Wall"],
+    "likes": 0,
+    "color": "red"
+  },
+  {
     "src": "wall/milesmorals.png",
     "name": "Miles Morales",
     "description": "Black Spider-Man from Spider-Verse.",
