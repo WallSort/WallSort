@@ -163,5 +163,4 @@ gtag("event", "download_wallpaper", {
         page_title: "Wallpaper Preview",
         page_location: window.location.href,
         page_path: "/preview.html"
-      }); 
-
+      });  
