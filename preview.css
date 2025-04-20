@@ -461,25 +461,3 @@ body {
     top: 40px;
     opacity: 1;
 }
-.preview-thumbnail{
-    border-radius: 1px;
-    opacity: 100%;
-    width: 20%;
-    height: 10%;
-    overflow: hidden;
-}
-.setpre{
-    width: 10%;
-    border-radius: 1px;
-    position: relative;
-    left: -30px;
-    top:10px;
-}
-.setaft{
-    width: 10%;
-    border-radius: 1px;
-    position: relative;
-    left: 30px;
-    top: -60px;
-}
-
