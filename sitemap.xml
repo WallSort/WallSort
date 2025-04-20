@@ -1,156 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="https://www.google.com/schemas/sitemap-image/1.1">
-
-  <!-- Static Pages -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://wallsort.pages.dev/index.html</loc>
-    <lastmod>2025-04-16</lastmod>
+    <lastmod>2025-04-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://wallsort.pages.dev/preview.html</loc>
-    <lastmod>2025-04-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.99</priority>
+    <lastmod>2025-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
-
-  <url>
-    <loc>https://wallsort.pages.dev/saved.html</loc>
-    <lastmod>2025-04-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
+   <url>
     <loc>https://wallsort.pages.dev/dev.html</loc>
-    <lastmod>2025-04-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <!-- Image Entries -->
-  <url>
-    <loc>https://wallsort.pages.dev/preview.html?img=wall/bucher.png</loc>
-    <lastmod>2025-04-16</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-04-20</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://wallsort.pages.dev/images/wall/bucher.png</image:loc>
-      <image:title>Billy Butcher</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://wallsort.pages.dev/preview.html?img=wall/messi.png</loc>
-    <lastmod>2025-04-16</lastmod>
+    <loc>https://wallsort.pages.dev/interest.html</loc>
+    <lastmod>2025-04-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://wallsort.pages.dev/images/wall/messi.png</image:loc>
-      <image:title>Lionel Messi</image:title>
-    </image:image>
+    <priority>0.8</priority>
   </url>
-
-  <url>
-    <loc>https://wallsort.pages.dev/preview.html?img=wall/luffyy.jpg</loc>
-    <lastmod>2025-04-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://wallsort.pages.dev/images/wall/luffyy.jpg</image:loc>
-      <image:title>Monkey D Luffy</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://wallsort.pages.dev/preview.html?img=wall/zen.png</loc>
-    <lastmod>2025-04-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://wallsort.pages.dev/images/wall/zen.png</image:loc>
-      <image:title>Zenitsu Agatsuma</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://wallsort.pages.dev/preview.html?img=wall/ace.png</loc>
-    <lastmod>2025-04-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://wallsort.pages.dev/images/wall/ace.png</image:loc>
-      <image:title>Portgas D. Ace</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://wallsort.pages.dev/preview.html?img=wall/toji.jpg</loc>
-    <lastmod>2025-04-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://wallsort.pages.dev/images/wall/toji.jpg</image:loc>
-      <image:title>Toji Fushiguro</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://wallsort.pages.dev/preview.html?img=wall/ring.jpg</loc>
-    <lastmod>2025-04-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://wallsort.pages.dev/images/wall/ring.jpg</image:loc>
-      <image:title>Mahoraga’s Ring</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://wallsort.pages.dev/preview.html?img=wall/akakhami.jpg</loc>
-    <lastmod>2025-04-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://wallsort.pages.dev/images/wall/akakhami.jpg</image:loc>
-      <image:title>Akagami Shanks</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://wallsort.pages.dev/preview.html?img=wall/mob.jpg</loc>
-    <lastmod>2025-04-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://wallsort.pages.dev/images/wall/mob.jpg</image:loc>
-      <image:title>Shigeo Kageyama</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://wallsort.pages.dev/preview.html?img=wall/zenn.png</loc>
-    <lastmod>2025-04-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://wallsort.pages.dev/images/wall/zenn.png</image:loc>
-      <image:title>Zenitsu Agatsuma</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://wallsort.pages.dev/preview.html?img=wall/gabimaru.png</loc>
-    <lastmod>2025-04-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://wallsort.pages.dev/images/wall/gabimaru.png</image:loc>
-      <image:title>Gurun no Gabimaru</image:title>
-    </image:image>
-  </url>
-
 </urlset>
