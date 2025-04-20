@@ -443,5 +443,3 @@ gtag("event", "download_wallpaper", {
       });  
 
     });
-
-    
