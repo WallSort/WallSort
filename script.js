@@ -47,6 +47,36 @@ document.addEventListener("DOMContentLoaded", function () {
             hideLoader(); // Hide loader after gallery is built
 
         })
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                // Pick a random index from 0 to i
+                const j = Math.floor(Math.random() * (i + 1));
+                // Swap element i with element j
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array; // Return the shuffled array
+        }
+        // ------------------------------------------------------------
+
+        fetch("data.json") // Load JSON file
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                allWallpapersData = data; // Store the fetched data
+
+                // --- ADD THIS LINE TO SHUFFLE THE DATA ---
+                shuffleArray(allWallpapersData);
+                // -----------------------------------------
+
+                renderGallery(allWallpapersData); // Render the initial gallery (now shuffled)
+
+                hideLoader(); // Hide loader after gallery is built
+
+            })
         .catch(error => {
             console.error("Error loading images:", error);
             hideLoader(); // Hide loader even on error
@@ -80,7 +110,7 @@ function renderGallery(wallpapersToRender) {
          const img = document.createElement("img");
          img.src = item.src;
          img.alt = item.name || "Wallpaper";
-          // <<< ENSURED LAZY LOADING HERE >>>
+         img.loading = "lazy"; // <<< ENSURED LAZY LOADING HERE >>>
 
          // Append the image to the wallpaper div
          wallpaperDiv.appendChild(img);
@@ -392,3 +422,22 @@ console.log("Saved search term to localStorage:", input);
 // --------------------------------------------
 
 // ... (rest of your searchWallpapers function, filtering and calling renderGallery)
+// --- Add this snippet at the very end of your <script> tag ---
+    // Ensure the browser has a chance to render and handle events
+    // after the main script execution completes.
+
+    setTimeout(() => {
+        console.log("Script finished main execution, yielding to browser.");
+        // Any code for non-critical tasks that can run after the initial render goes here.
+        // Example:
+        // initializeLessImportantFeature();
+        // setupLateLoadingAnalytics();
+    }, 0); // A delay of 0 ms tells the browser to run this after the current script block finishes.
+
+    gtag("event", "page_view", {
+        page_title: "WallSort",
+        page_location: window.location.href,
+        page_path: "/index.html"
+      });  
+
+    
