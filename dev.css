@@ -264,7 +264,7 @@ footer {
   width: 100%;
   overflow: hidden;
   position: absolute;
-  top: 155%;
+  bottom: -130%;
 }
 .slider-container {
   position: relative;
@@ -345,16 +345,72 @@ footer {
   }
 }
 #ok{
+  font-weight: 100;
   opacity: 70%;
   font-weight: bold;
   font-size: 2rem;
   color: white;
   text-decoration: underline;
   position: absolute;
-  top: 163%;
-  left: 31%;
+  bottom: -133%;
+  left: 34%;
   text-align: center;
   align-items: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Playfair";
   animation: color 10s  infinite;
+}
+.twos{
+  font-family: "Playfair";
+  position: absolute;
+  bottom: -100%;
+  left: 2%;
+  width: 400px;
+  background: solid;
+  background-color: rgba(105, 105, 105, 0.171);
+  border: solid rgba(117, 117, 117, 0.301)1px;
+  backdrop-filter: blur(30px);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-radius: 40px;
+  z-index: 1;
+}
+#tesa{
+  z-index: 0;
+  position: absolute;
+  bottom: 30px;
+  left: 50px;
+  filter: blur(30px);
+  align-items: center;
+  overflow: hidden;
+  height: 20%;
+  width: 20%;
+  animation-name: tess;
+  animation-duration: 18s;
+  animation-iteration-count: infinite;
+}
+.op{
+  position: absolute;
+}
+.top{
+  z-index: 2;
+}
+#comp{
+  font-family:"Roboto";
+  text-align: center;
+  font-size: 3rem;
+  margin-right: 70px;
+  margin-bottom: 40px;
+  text-decoration: underline;
+}
+#one {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  padding: 10px 15px;
+  font-size: 0.7rem;
+  background: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  z-index: 10;
 }
