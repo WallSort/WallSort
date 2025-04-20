@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wallpaper Preview</title>
     <link rel="stylesheet" href="preview.css">
+    <link rel="icon" href="logo's/priview.png" type="image/png">
     <!--Fonts sed from google fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <link rel="icon" href="logo's/priview.png" type="image/png">
 
 </head>
 <body background="grey">
@@ -21,8 +21,133 @@
     </header>
     <h1 class="mainttxt">WallSort</h1>
     <main class="preview-container">
-        <img id="preview-image" src="#" alt="Wallpaper Preview" loading="lazy">
-        <div class="ball on"></div><div class="ball tn"></div><div class="ball thn"></div>
+        <img id="preview-image" class="top" src="#" alt="Wallpaper Preview" loading="lazy">
+        <img id="prev-preview-image" class="preview-thumbnail setpre" src="" alt="Previous Wallpaper Preview">
+        <img id="next-preview-image" class="preview-thumbnail setaft" src="" alt="Next Wallpaper Preview">
+
+
+        <div id="navx">.</div>
+        <div id="lines">
+        <h2 id="imageTitle"></h2>
+        <p id="imageDesc"></p>
+        </div>
+        
+        <a id="download-btn" href="#" download class="download-btn"><img id="sss" src="download.png">  Download</a>
+        <button class="download-btn-two" onclick="shareContent()"><img id="ss" src="shereGoogle.png">  Share</button>
+        <button class="download-btn-two-three" onclick="saveImage()"><img id="saves" src="saveGoogle.png"></button>
+        
+
+
+        <div class="contact">
+            <a class="contact id" href="#">Contact us</a><br><br>
+            <a class="contact number" href="#">Contact : 0000000000</a><br><br>
+            <a class="contact support" href="#">INSTAGRAM</a>
+        </div>
+
+
+        <!--loader for image scureently not in use-->
+        <div id="loader"></div>
+        <div class="loader-spinner"></div>
+    </main>
+    
+    <div id="swipeGuide" class="swipe-guide">
+        👉 Swipe left and right to navigate wallpapers 👈
+    </div>
+    
+
+<script src="preview.js"></script>
+    
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallpaper Preview</title>
+    <link rel="stylesheet" href="preview.css">
+    <link rel="icon" href="logo's/priview.png" type="image/png">
+    <!--Fonts sed from google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+</head>
+<body background="grey">
+    
+    <div id="top"> </div>
+    <img id="bg" src="#" alt="animation">
+    <header>
+        <a id="one" href="index.html" class="back-btn">Back</a>
+    </header>
+    <h1 class="mainttxt">WallSort</h1>
+    <main class="preview-container">
+        <img id="preview-image" class="top" src="#" alt="Wallpaper Preview" loading="lazy">
+        <img id="prev-preview-image" class="preview-thumbnail setpre" src="" alt="Previous Wallpaper Preview">
+        <img id="next-preview-image" class="preview-thumbnail setaft" src="" alt="Next Wallpaper Preview">
+
+
+        <div id="navx">.</div>
+        <div id="lines">
+        <h2 id="imageTitle"></h2>
+        <p id="imageDesc"></p>
+        </div>
+        
+        <a id="download-btn" href="#" download class="download-btn"><img id="sss" src="download.png">  Download</a>
+        <button class="download-btn-two" onclick="shareContent()"><img id="ss" src="shereGoogle.png">  Share</button>
+        <button class="download-btn-two-three" onclick="saveImage()"><img id="saves" src="saveGoogle.png"></button>
+        
+
+
+        <div class="contact">
+            <a class="contact id" href="#">Contact us</a><br><br>
+            <a class="contact number" href="#">Contact : 0000000000</a><br><br>
+            <a class="contact support" href="#">INSTAGRAM</a>
+        </div>
+
+
+        <!--loader for image scureently not in use-->
+        <div id="loader"></div>
+        <div class="loader-spinner"></div>
+    </main>
+    
+    <div id="swipeGuide" class="swipe-guide">
+        👉 Swipe left and right to navigate wallpapers 👈
+    </div>
+    
+
+<script src="preview.js"></script>
+    
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallpaper Preview</title>
+    <link rel="stylesheet" href="preview.css">
+    <link rel="icon" href="logo's/priview.png" type="image/png">
+    <!--Fonts sed from google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+</head>
+<body background="grey">
+    
+    <div id="top"> </div>
+    <img id="bg" src="#" alt="animation">
+    <header>
+        <a id="one" href="index.html" class="back-btn">Back</a>
+    </header>
+    <h1 class="mainttxt">WallSort</h1>
+    <main class="preview-container">
+        <img id="preview-image" class="top" src="#" alt="Wallpaper Preview" loading="lazy">
+        <img id="prev-preview-image" class="preview-thumbnail setpre" src="" alt="Previous Wallpaper Preview">
+        <img id="next-preview-image" class="preview-thumbnail setaft" src="" alt="Next Wallpaper Preview">
 
 
         <div id="navx">.</div>
