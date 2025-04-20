@@ -1,4 +1,8 @@
 User-agent: *
-Allow: /
+Allow: /index.html
+Allow: /saved.html
+Allow: /preview.html
+Allow: /dev.html
+Allow: /interest.html
 
 Sitemap: https://wallsort.pages.dev/sitemap.xml
