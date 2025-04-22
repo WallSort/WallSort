@@ -24,7 +24,7 @@
     "color": "red"
   },
   {
-    "src": "wall/beach0001.png",
+    "src": "wall/beach0001.jpg",
     "name": "Vector Beach",
     "description": "Artistic beach in vector style.",
     "keywords": ["Vector Beach", "Beach", "Vector Art", "Ocean", "Sea", "Tropical", "Scenic", "Nature", "HD", "UHD", "Good Wall", "Wallpaper"],
@@ -32,7 +32,7 @@
     "color": "red"
   },
   {
-    "src": "wall/earth0001.png",
+    "src": "wall/earth0001.jpg",
     "name": "Earth View",
     "description": "Side view of Earth from space.",
     "keywords": ["Earth", "Planet", "Earth View", "Space", "Blue Planet", "Astronomy", "Nature", "Cosmos", "Globe", "Wallpaper", "HD", "UHD", "Good Wall"],
@@ -56,7 +56,7 @@
     "color": "red"
   },
   {
-    "src": "wall/kyorakshinsui0001.png",
+    "src": "wall/kyorakshinsui0001.jpg",
     "name": "Shunsui Kyōraku",
     "description": "Captain from Bleach with pink kimono.",
     "keywords": ["Shunsui Kyōraku", "Bleach", "Captain", "Anime", "Shinigami", "Pink Kimono", "Soul Society", "Anime Wallpaper", "HD", "UHD", "Good Wall", "Shonen"],
@@ -64,7 +64,7 @@
     "color": "red"
   },
   {
-    "src": "wall/moon0011.png",
+    "src": "wall/moon0011.jpg",
     "name": "Distant Moon",
     "description": "Isolated view of the moon.",
     "keywords": ["Moon", "Lunar", "Space", "Astronomy", "Distant View", "Cosmos", "Night", "HD", "UHD", "Good Wall", "Wallpaper", "Nature"],
@@ -72,7 +72,7 @@
     "color": "red"
   },
   {
-    "src": "wall/pattern.png",
+    "src": "wall/pattern.jpg",
     "name": "Abstract Pattern",
     "description": "Minimal abstract wallpaper design.",
     "keywords": ["Pattern", "Abstract", "Minimal", "Design", "Shapes", "Modern Art", "Aesthetic", "Wallpaper", "HD", "UHD", "Good Wall"],
@@ -80,7 +80,7 @@
     "color": "red"
   },
   {
-    "src": "wall/pattern00190.png",
+    "src": "wall/pattern00190.jpg",
     "name": "Wavy Pattern",
     "description": "Wave style pattern like iOS theme.",
     "keywords": ["Pattern", "Wavy", "iOS Style", "Design", "Abstract", "Wave Art", "Minimal", "Aesthetic", "Wallpaper", "HD", "UHD", "Good Wall"],
@@ -88,7 +88,7 @@
     "color": "red"
   },
   {
-    "src": "wall/senery.png",
+    "src": "wall/senery.jpg",
     "name": "Sunset Scenery",
     "description": "Vector art of sunset in mountains.",
     "keywords": ["Scenery", "Sunset", "Mountains", "Vector Art", "Nature", "Sun", "Wallpaper", "HD", "UHD", "Good Wall", "Landscape", "Calm", "Outdoor"],
@@ -112,7 +112,7 @@
     "color": "red"
   },
   {
-    "src": "wall/wave0203.png",
+    "src": "wall/wave0203.jpg",
     "name": "Ocean Waves",
     "description": "Close-up vector of beach waves.",
     "keywords": ["Waves", "Ocean", "Beach", "Vector Art", "Nature", "Water", "Sea", "Scenic", "Wallpaper", "HD", "UHD", "Good Wall"],
