@@ -1,4 +1,92 @@
-[     
+[  
+  {
+    "src": "wall/ashkech21937.jpg",
+    "name": "Ash Ketchum",
+    "description": "Trainer from Pokémon with Pikachu.",
+    "keywords": ["Ash Ketchum", "Ash", "Pikachu", "Pokemon", "anime", "pokemon trainer", "Pallet Town", "electric type", "anime protagonist", "blue", "pokemon wallpaper"],
+    "likes": 0,
+    "color": "blue"
+  },
+  {
+    "src": "wall/batsup.jpg",
+    "name": "Batman and Superman",
+    "description": "Face-off between DC heroes.",
+    "keywords": ["Batman", "Superman", "DC", "DC Comics", "superhero", "comic book heroes", "Justice League", "Bruce Wayne", "Clark Kent", "fade blue", "duo", "versus"],
+    "likes": 0,
+    "color": "fade blue"
+  },
+  {
+    "src": "wall/blackspiderman12212.jpg",
+    "name": "Miles Morales",
+    "description": "Spider-Man from Spider-Verse.",
+    "keywords": ["Miles Morales", "Spider-Man", "Spiderman", "Across the Spider-Verse", "Marvel", "superhero", "spiderverse", "yellow", "red", "black", "marvel animation", "comic hero"],
+    "likes": 0,
+    "color": "yellow red black"
+  },
+  {
+    "src": "wall/iorisamura2234.jpg",
+    "name": "Iori Samura",
+    "description": "Kagurabachi swordsman's eyes.",
+    "keywords": ["Iori Samura", "Kagurabachi", "anime", "manga", "swordsman", "eye closeup", "white", "grey", "anime eyes", "kagurabachi fanart"],
+    "likes": 0,
+    "color": "grey white"
+  },
+  {
+    "src": "wall/katana.jpg",
+    "name": "Tobimune",
+    "description": "The Tobimune katana from Kagurabachi.",
+    "keywords": ["Tobimune", "katana", "Tobimune Katana", "Kagurabachi", "samurai sword", "anime weapon", "anime katana", "grey", "white", "japanese sword", "sword art", "manga", "anime"],
+    "likes": 0,
+    "color": "grey"
+  },
+  {
+    "src": "wall/mikasaakkerman.jpg",
+    "name": "Mikasa Ackerman",
+    "description": "Soldier from Attack on Titan.",
+    "keywords": ["Mikasa Ackerman", "Attack on Titan", "AOT", "anime", "Survey Corps", "Ackerman clan", "Eren", "Levi", "fade green", "anime fighter"],
+    "likes": 0,
+    "color": "fade green"
+  },
+  {
+    "src": "wall/picachoo92.jpg",
+    "name": "Pikachu",
+    "description": "Iconic electric Pokémon.",
+    "keywords": ["Pikachu", "Pokemon", "electric type", "Ash's Pikachu", "yellow", "anime", "cute pokemon", "pokemon mascot", "pokemon wallpaper"],
+    "likes": 0,
+    "color": "yellow"
+  },
+  {
+    "src": "wall/superman32.jpg",
+    "name": "Superman",
+    "description": "Comic book style Superman.",
+    "keywords": ["Superman", "Clark Kent", "DC", "DC Comics", "superhero", "black", "comic style", "justice league", "man of steel", "cape", "hero"],
+    "likes": 0,
+    "color": "black"
+  },
+  {
+    "src": "wall/yourname2342.jpg",
+    "name": "Taki Tachibana and Mitsuha Miyamizu",
+    "description": "Main characters from the anime movie Your Name.",
+    "keywords": ["Your Name", "Kimi no Na wa", "Taki Tachibana", "Mitsuha Miyamizu", "anime movie", "Makoto Shinkai", "romantic anime", "anime couple", "scenic", "blue", "anime wallpaper"],
+    "likes": 0,
+    "color": "blue"
+  },
+  {
+    "src": "wall/levaiakkerman.jpg",
+    "name": "Levi Ackerman",
+    "description": "Elite soldier from Attack on Titan.",
+    "keywords": ["Levi Ackerman", "AOT", "Attack on Titan", "anime", "fade green", "Survey Corps", "Ackerman", "Captain Levi", "anime fighter", "strongest soldier"],
+    "likes": 0,
+    "color": "fade green"
+  },
+  {
+    "src": "wall/eran111.jpg",
+    "name": "Eren Yeager",
+    "description": "Titan shifter from AOT.",
+    "keywords": ["Eren Yeager", "Attack on Titan", "AOT", "anime", "founding titan", "fade orange", "green", "anime transformation", "shonen", "yeagerist"],
+    "likes": 0,
+    "color": "fade-orange green"
+  },
   {
     "src": "wall/blackhole.png",
     "name": "Black Hole",
