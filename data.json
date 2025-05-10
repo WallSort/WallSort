@@ -8,6 +8,62 @@
     "color": "blue"
   },
   {
+    "src": "wall/batman2321.jpg",
+    "name": "Batman",
+    "description": "Batman from DC Comics in grey and red tones.",
+    "keywords": ["Batman", "DC", "DC Comics", "Dark Knight", "Bruce Wayne", "superhero", "grey", "red", "comic book", "vigilante", "cape crusader"],
+    "likes": 0,
+    "color": "grey"
+  },
+  {
+    "src": "wall/batman2332.jpg",
+    "name": "Batman",
+    "description": "Batman from DC Comics in black and yellow tones.",
+    "keywords": ["Batman", "DC", "DC Comics", "Dark Knight", "Bruce Wayne", "superhero", "black", "yellow", "comic book", "vigilante", "cape crusader"],
+    "likes": 0,
+    "color": "black"
+  },
+  {
+    "src": "wall/neymer23.jpg",
+    "name": "Neymar Jr.",
+    "description": "Famous football player Neymar Jr.",
+    "keywords": ["Neymar", "Neymar Jr", "football", "soccer", "Brazil", "football star", "athlete", "sports", "famous player", "yellow", "stadium", "football wallpaper"],
+    "likes": 0,
+    "color": "yellow"
+  },
+  {
+    "src": "wall/neymer white 34.jpg",
+    "name": "Neymar Jr.",
+    "description": "Footballer Neymar in blue and black tones.",
+    "keywords": ["Neymar", "Neymar Jr", "football", "soccer", "Brazil", "athlete", "blue", "black", "sports", "football star", "famous footballer", "stadium", "football wallpaper"],
+    "likes": 0,
+    "color": "blue"
+  },
+  {
+    "src": "wall/neymer82472.jpg",
+    "name": "Neymar Jr.",
+    "description": "Neymar in yellowish white tones.",
+    "keywords": ["Neymar", "Neymar Jr", "football", "soccer", "Brazil", "yellow", "white", "football star", "famous footballer", "sports", "athlete", "football wallpaper"],
+    "likes": 0,
+    "color": "yellow"
+  },
+  {
+    "src": "wall/superman133.jpg",
+    "name": "Superman",
+    "description": "Superman from DC Comics in blue and yellow suit.",
+    "keywords": ["Superman", "DC", "DC Comics", "Clark Kent", "Man of Steel", "superhero", "blue", "yellow", "cape", "justice league", "comic hero"],
+    "likes": 0,
+    "color": "blue"
+  },
+  {
+    "src": "wall/superman323.jpg",
+    "name": "Superman",
+    "description": "Superman from DC Comics in blue and white tones.",
+    "keywords": ["Superman", "DC", "DC Comics", "Clark Kent", "Man of Steel", "superhero", "blue", "white", "cape", "justice league", "comic hero"],
+    "likes": 0,
+    "color": "blue"
+  },
+  {
     "src": "wall/batsup.jpg",
     "name": "Batman and Superman",
     "description": "Face-off between DC heroes.",
